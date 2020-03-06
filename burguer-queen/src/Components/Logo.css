@@ -1,16 +1,14 @@
 
-.App-logo {
-  display: flex;
-  height: 100%;
-  pointer-events: none;
-  align-items: flex-end;
-}
-
-
 .App-header {
   background:#FFFE4B;
   background-size: contain;
   height: 120px;
   width: 100%;
   margin: 0 auto;
+}
+.App-logo {
+  display: flex;
+  height: 100%;
+  pointer-events: none;
+  align-items: flex-end;
 }
