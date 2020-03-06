@@ -1,15 +1,11 @@
 import React from 'react';
 import './component-section.css';
 
-function ListDes () {
-  console.log('Desayuno');
-}
-function List () {
-  console.log('Almuerzo y cena');
-}
+const ListDes = () => console.log('Desayuno');
 
-function Section() {
-  return (
+const List = () => console.log('Almuerzo y cena');
+
+const Section = () => 
     <div className="Section">
       <main>
           <h1>Lista de Productos</h1>
@@ -18,8 +14,6 @@ function Section() {
           <button className="Button" onClick={List}> Almuerzo y Cena</button>
           </div>
       </main>
-    </div>
-  );
-}
+    </div>;
 
 export default Section;
