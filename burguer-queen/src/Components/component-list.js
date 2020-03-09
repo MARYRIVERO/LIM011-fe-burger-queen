@@ -2,7 +2,7 @@ import React from 'react';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import firebase from '../firebaseconfig';
 
-function FirestoreCollection() {
+function FirestoreCollection(props) {
   const [value, loading, error] = useCollection(
     firebase.firestore().collection('Menu'),
     {
@@ -18,9 +18,10 @@ function FirestoreCollection() {
           <span>
             Collection:{' '}
             {value.docs.map(doc => (
-              <React.Fragment key={doc.id}>
-                {JSON.stringify(doc.data())},{' '}
-              </React.Fragment>
+              console.log(doc.data().categoria)
+              // <React.Fragment key={doc.id}>
+              //   {JSON.stringify(doc.data())},{' '}
+              // </React.Fragment>
             ))}
           </span>
         )}

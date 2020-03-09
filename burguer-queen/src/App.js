@@ -7,4 +7,5 @@ const App = () =>
       <Logo />
       <Section />
     </div>;
+
 export default App;
