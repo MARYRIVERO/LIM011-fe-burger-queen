@@ -1,32 +1,42 @@
-import React from 'react';
+import { useState } from 'react';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import firebase from '../firebaseconfig';
 
-function FirestoreCollection() {
-  const [value, loading, error] = useCollection(
-    firebase.firestore().collection('Menu'),
-    {
-      snapshotListenOptions: { includeMetadataChanges: true },
-    }
-  )
-   return (
-    <div>
-      <p>
-        {error && <strong>Error: {JSON.stringify(error)}</strong>}
-        {loading && <span>Collection: Loading...</span>}
-        {value && (
-          <span>
-            Collection:{' '}
-            {value.docs.map(doc => (
-              <React.Fragment key={doc.id}>
-                {JSON.stringify(doc.data())},{' '}
-              </React.Fragment>
-            ))}
-          </span>
-        )}
-      </p>
-    </div>
-  )
-};
+  function ComponentMenu() {
+    const [menu, parts ] = useState([]);
+      const [value, loading, error] = useCollection(
+        firebase.firestore().collection('Menu'),
+        {
+          snapshotListenOptions: { includeMetadataChanges: true },
+        }
+      );
+    
+    function Click(cat) { 
+      const arrProducts = value.docs.map((elem) => {
+        const obj = {
+          Categoria: elem.data().categoria,
+          Producto: elem.data().producto,
+          Precio: elem.data().precio,
+          id: elem.id,
+        }
+        return obj;
+      });
+      console.log(arrProducts);
+      
+    const result = arrProducts.filter((elem) => elem.categoria === cat);
+    console.log(JSON.stringify(menu));
+    parts(result)
 
-export default FirestoreCollection;
+  
+     function Elements() {
+    if (loading) {
+      return 'Cargando...';
+    }
+    if (error) {
+      return 'Hubo un error';
+    }
+  }
+  return Elements;
+};
+  };
+  export default ComponentMenu;

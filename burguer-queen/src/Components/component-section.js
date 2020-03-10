@@ -1,27 +1,36 @@
 import React from 'react';
-import './component-section.css';
-// import FirestoreCollection from './component-list.js';
+import './component-section.css'
 
-function ListDes () {
-  console.log('Desayuno');
-}
-
-function ListAlm() {
-  console.log('Almuerzo y Cena');
-}
-
-
-function Section() {
+function Boton() {
   return (
     <div className="Section">
       <main>
           <h1>Lista de Productos</h1>
           <div className="Section-main" >
-          <button className="Button" onClick={ListDes}>Desayuno</button>
-          <button className="Button" onClick={ListAlm}> Almuerzo y Cena</button>
-          </div>
-      </main>
-  </div>
-  );
-  }
-export default Section;
+          <button
+            type="button"
+            className="Btn Desayuno"
+            onClick={(event) => {
+            event.preventDefault();
+            Boton('desayuno');
+            }}
+          >
+              Desayuno
+          </button>
+       
+          <button
+            type="button"
+            className="Btn Almuerzo y Cena"
+            onClick={(event) => {
+            event.preventDefault();
+            Boton('almuerzo y cena');
+            }}
+          > 
+            Almuerzo y cena
+          </button>
+        </div>
+        </main>
+    </div>
+);
+}
+export default Boton;

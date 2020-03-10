@@ -1,10 +1,14 @@
 import React from 'react';
-import Logo from '../src/Components/component-logo.js';
-import Section from '../src/Components/component-section.js';
+import Logo from './Components/component-logo.js';
+import Boton from './Components/component-section.js';
 
-const App = () => 
+
+const App = () => {
+  return (
     <div> 
-      <Logo />
-      <Section />
-    </div>;
+    <Logo />
+    <Boton />
+  </div>
+  )
+}
 export default App;
