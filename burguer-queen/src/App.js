@@ -1,6 +1,6 @@
 import React from 'react';
-import Logo from '../src/Components/component-logo.js';
-import Section from '../src/Components/component-section.js';
+import Logo from './Components/component-header';
+import Section from './Components/component-menu';
 
 const App = () => 
     <div> 

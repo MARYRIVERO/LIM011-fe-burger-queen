@@ -1,38 +1,40 @@
 .Section {
-  align-content: flex-end;
   background: #fffe4b;
   background-size: contain;
-  height: 50px;
+  height: 60px;
   width: 50%;
 }
 
 .Section-main {
-  display: flex;
-  justify-content: center;
   background: blue;
   margin: 1em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  flex-direction: row;
 }
 .Lista{
   justify-items: center;
+  font-size: 2em;
 }
 
 .Button {
   font-size: 1em;
   color: white;
-  margin: 1em;
+  margin: 0.8em;
   background-color: brown;
-  width: 150px;
+  width: 140px;
   height: 50px;
-}
-.Product {
-  display: flex;
-  align-content: space-around;
-  justify-content: center;
-  flex-wrap: wrap;
 }
 .prod {
   margin: 1em;
   width: 10em;
-  justify-content: center;
   background: coral;
+  flex-direction: column;
+}
+.p{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  flex-direction: row;
 }
