@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState,  useEffect } from 'react';
 import firebase from '../firebaseconfig';
 import './component-section.css'
 
 const Section = () => {
   const [arr, setProducts] = useState([]);
   const [type, setType] = useState('desayuno');
-
   useEffect(() => {
-      firebase.firestore().collection('Menu').where('categoria', '==', type).get()
-      .then((querySnapshot) => {
+    firebase
+      .firestore()
+      .collection('Menu')
+      .where('categoria', '==', type)
+      .get()
+  .then((querySnapshot) => {
         const array = [];
         querySnapshot.forEach((doc) => {
           array.push({ id: doc.id, ...doc.data() });
@@ -17,18 +20,23 @@ const Section = () => {
       })
       .catch((error) => {
         console.log('Error getting documents: ', error);
-      });
-  });
-
+      })
+    });
   return (
     <div className="Section">
-      <h1>LISTA DE PRODUCTOS</h1>
+      <h1 className="Lista">LISTA DE PRODUCTOS</h1>
       <div className="Section-main">
         <button type="button" className="Button" onClick={() => setType('desayuno')}>
           Desayuno
         </button>
-        <button type="button" className="Button" onClick={() => setType('almuerzo y cena')}>
-          Almuerzo y cena
+        <button type="button" className="Button" onClick={() => setType('hamburguesa')}>
+          Hamburguesas
+        </button>
+        <button type="button" className="Button" onClick={() => setType('acompañamientos')}>
+          Acompañamientos
+        </button>
+        <button type="button" className="Button" onClick={() => setType('bebida')}>
+          Bebidas
         </button>
       </div>
       <div className="Product">

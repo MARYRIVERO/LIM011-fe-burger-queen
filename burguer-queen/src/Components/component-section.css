@@ -1,33 +1,36 @@
-
 .Section {
-    align-content: flex-end;
-    background:#FFFE4B;
-    background-size: contain;
-    height: 50px;
-    width: 50%;
-  }
-  
-  .Section-main {
-    display: flex;
-    justify-content: center;
-    background: blue;
-    margin: 1em;
-  }
-  
-  .Button{
-    margin: 1em;
+  align-content: flex-end;
+  background: #fffe4b;
+  background-size: contain;
+  height: 50px;
+  width: 50%;
+}
+
+.Section-main {
+  display: flex;
+  justify-content: center;
+  background: blue;
+  margin: 1em;
+}
+.Lista{
+  justify-items: center;
+}
+
+.Button {
+  font-size: 1em;
+  color: white;
+  margin: 1em;
   background-color: brown;
   width: 150px;
   height: 50px;
-
-  }
-.Product{
+}
+.Product {
   display: flex;
   align-content: space-around;
   justify-content: center;
   flex-wrap: wrap;
 }
-.prod{
+.prod {
   margin: 1em;
   width: 10em;
   justify-content: center;
