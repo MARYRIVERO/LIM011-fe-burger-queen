@@ -21,4 +21,15 @@
   height: 50px;
 
   }
-  
+.Product{
+  display: flex;
+  align-content: space-around;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.prod{
+  margin: 1em;
+  width: 10em;
+  justify-content: center;
+  background: coral;
+}
