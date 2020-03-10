@@ -1,14 +1,15 @@
 import React from 'react';
-import Logo from './Components/component-logo.js';
-import Boton from './Components/component-section.js';
+import Logo from './Components/component-header';
+import Section from './Components/component-menu';
 
 
 const App = () => {
   return (
     <div> 
-    <Logo />
-    <Boton />
-  </div>
-  )
-}
-export default App;
+      <Logo />
+      <Section />
+    </div>
+   )
+   };
+
+ export default App;
