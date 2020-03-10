@@ -33,7 +33,6 @@ function Section() {
           Bebidas
           </button>
            </div>
-      {' '}
           <div className="p">
             {value.docs.filter(doc => doc.data().categoria === type)
             .map(doc => (
