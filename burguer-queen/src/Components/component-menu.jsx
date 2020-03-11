@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import firebase from '../firebaseconfig';
+import Product from './component-product';
 import './component-menu.css'
 
 function Section() {
@@ -35,15 +36,9 @@ function Section() {
            </div>
           <div className="p">
             {value.docs.filter(doc => doc.data().categoria === type)
-            .map(doc => (
-              <div className="prod" key={doc.data().id}>
-                <p>{doc.data().producto}</p>
-                <p className="price">
-                S/.
-                {doc.data().precio}
-               </p>
-              </div>
-            ))}
+            .map(doc => 
+            <Product docu= {doc} />
+            )};
           </div>
     </section>
     </main>
