@@ -1,15 +1,15 @@
 import React from 'react';
 
-const product = ({docu}) => {
-    console.log(docu.categoria);
-   const {producto, precio} = docu;
- return(
-<div className="prod" key={docu.id}>
+ const product = ({document}) => {
+  console.log(document.categoria);
+ const {producto, precio} = document.data();
+return(
+<div className="prod" key={document.id}>
 <p>{producto}</p>
 <p className="price">
 S/.
 {precio}
 </p>
 </div>
- )};
- export default product;
+)};
+export default product;

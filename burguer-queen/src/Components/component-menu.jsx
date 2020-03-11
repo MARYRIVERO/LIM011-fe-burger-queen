@@ -37,8 +37,8 @@ function Section() {
           <div className="p">
             {value.docs.filter(doc => doc.data().categoria === type)
             .map(doc => 
-            <Product docu= {doc} />
-            )};
+            <Product document= {doc} />
+            )}
           </div>
     </section>
     </main>
