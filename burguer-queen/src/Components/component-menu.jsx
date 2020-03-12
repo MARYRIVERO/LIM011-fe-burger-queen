@@ -37,7 +37,7 @@ function Section() {
           <div className="p">
             {value.docs.filter(doc => doc.data().categoria === type)
             .map(doc => 
-            <Product document= {doc} />
+            <Product document= {doc}  key={doc.id}/>
             )}
           </div>
     </section>

@@ -1,7 +1,6 @@
 import React from 'react';
 
  const product = ({document}) => {
-  console.log(document.categoria);
  const {producto, precio} = document.data();
 return(
 <div className="prod" key={document.id}>
