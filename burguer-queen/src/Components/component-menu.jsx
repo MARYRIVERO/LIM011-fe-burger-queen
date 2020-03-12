@@ -15,9 +15,8 @@ function Section() {
    return (
       <section>
         {error && <strong>Error: {JSON.stringify(error)}</strong>}
-        {loading && <span>Collection: Loading...</span>}
+        {loading && <span> Loading...</span>}
         {value && (
-      <main>
       <section className="Section">
         <h1 className="Lista">LISTA DE PRODUCTOS</h1>
           <div className="Section-main">
@@ -41,7 +40,6 @@ function Section() {
             )}
           </div>
     </section>
-    </main>
     )}
 </section>
   )
