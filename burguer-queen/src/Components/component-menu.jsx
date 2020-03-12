@@ -50,11 +50,7 @@ function Section() {
           <div className="p">
             {value.docs.filter(doc => doc.data().categoria === type)
             .map(doc => 
-<<<<<<< HEAD
             <Product document= {doc}  key={doc.id}/>
-=======
-            <Product document= {doc} key={doc.id} agregar= {agregarTarea}/>
->>>>>>> 5f16345707c75a60c135ffb9a0e49a5f7375f467
             )}
           </div>
     </section>
