@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import firebase from '../firebaseconfig';
 import Product from './component-product';
+import ListaProduct from './component-listaproducto';
 import './component-menu.css'
 
 function Section() {
@@ -12,6 +13,19 @@ function Section() {
       snapshotListenOptions: { includeMetadataChanges: true },
     }
   )
+
+  
+  const [ arrOrder, setArrOrder ] = useState([]);
+  const agregarTarea = (objTarea) => {
+    const newArr =  arrOrder.concat([objTarea]);
+    console.log(objTarea);
+    setArrOrder(newArr);
+    return(
+        <ListaProduct document= {arrOrder} />
+    )}
+    
+   
+
    return (
       <section>
         {error && <strong>Error: {JSON.stringify(error)}</strong>}
@@ -36,7 +50,11 @@ function Section() {
           <div className="p">
             {value.docs.filter(doc => doc.data().categoria === type)
             .map(doc => 
+<<<<<<< HEAD
             <Product document= {doc}  key={doc.id}/>
+=======
+            <Product document= {doc} key={doc.id} agregar= {agregarTarea}/>
+>>>>>>> 5f16345707c75a60c135ffb9a0e49a5f7375f467
             )}
           </div>
     </section>
@@ -46,3 +64,4 @@ function Section() {
 };
 
 export default Section;
+
