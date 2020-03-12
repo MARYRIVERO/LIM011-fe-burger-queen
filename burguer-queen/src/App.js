@@ -1,13 +1,13 @@
 import React from 'react';
 import Logo from './Components/component-header';
-import Section from './Components/component-menu';
+import ComponentMesero from './Components/component-mesero';
 
 
 const App = () => {
   return (
     <div> 
       <Logo />
-      <Section />
+      <ComponentMesero/>
     </div>
    )
    };
