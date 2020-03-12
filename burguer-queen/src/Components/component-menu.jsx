@@ -15,9 +15,8 @@ function Section() {
    return (
       <section>
         {error && <strong>Error: {JSON.stringify(error)}</strong>}
-        {loading && <span>Collection: Loading...</span>}
+        {loading && <span> Loading...</span>}
         {value && (
-      <main>
       <section className="Section">
         <h1 className="Lista">LISTA DE PRODUCTOS</h1>
           <div className="Section-main">
@@ -37,11 +36,10 @@ function Section() {
           <div className="p">
             {value.docs.filter(doc => doc.data().categoria === type)
             .map(doc => 
-            <Product document= {doc} />
+            <Product document= {doc}  key={doc.id} />
             )}
           </div>
     </section>
-    </main>
     )}
 </section>
   )

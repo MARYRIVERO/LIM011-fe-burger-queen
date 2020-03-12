@@ -1,10 +1,11 @@
 import React from 'react';
 
+
  const product = ({document}) => {
-  console.log(document.categoria);
  const {producto, precio} = document.data();
+
 return(
-<div className="prod" key={document.id}>
+<div className="prod" key={document.id} onClick={() => console.log(document.data())}>
 <p>{producto}</p>
 <p className="price">
 S/.
