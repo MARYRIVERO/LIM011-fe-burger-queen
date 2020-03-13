@@ -1,12 +1,12 @@
 import React from 'react';
-import Section from './component-menu';
-import Lista from './component-lista';
+import Menu from './component-menu';
+import ListaPedidoProducto from './component-listaproducto';
 
 const ComponentMesero = () => {
   return (
     <div> 
-      <Section />
-      <Lista />
+      <Menu />
+      <ListaPedidoProducto />
     </div>
    )
    };

@@ -3,9 +3,9 @@ import { useCollection } from 'react-firebase-hooks/firestore';
 import firebase from '../firebaseconfig';
 import Product from './component-product';
 import './component-menu.css'
-import ListaProducto from './component-lista';
+import ListaProducto from './component-listaproducto';
 
-function Section() {
+function Menu() {
   const [type, setType] = useState('desayuno');
   const [value, loading, error] = useCollection(
     firebase.firestore().collection('Menu'),
@@ -62,5 +62,5 @@ function Section() {
   )
 };
 
-export default Section;
+export default Menu;
 

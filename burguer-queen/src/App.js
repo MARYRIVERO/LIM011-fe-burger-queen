@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div> 
       <Logo />
-      <ComponentMesero/>
+      <ComponentMesero />
     </div>
    )
    };
