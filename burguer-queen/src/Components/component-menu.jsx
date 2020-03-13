@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import firebase from '../firebaseconfig';
 import Product from './component-product';
-import ListaProduct from './component-listaproducto';
 import './component-menu.css'
+import ListaProducto from './component-lista';
 
 function Section() {
   const [type, setType] = useState('desayuno');
@@ -14,18 +14,12 @@ function Section() {
     }
   )
 
-  
-  const [ arrOrder, setArrOrder ] = useState([]);
-  const agregarTarea = (objTarea) => {
-    const newArr =  arrOrder.concat([objTarea]);
-    console.log(objTarea);
-    setArrOrder(newArr);
-    return(
-        <ListaProduct document= {arrOrder} />
-    )}
-    
-   
-
+    const [tarea, setTarea] = useState([]);
+    const agregarTarea = (objTarea) => {
+      console.log('vista padre',objTarea);
+      const newArr =  tarea.concat([ objTarea ]);
+      setTarea(newArr);
+  }
    return (
       <section>
         {error && <strong>Error: {JSON.stringify(error)}</strong>}
@@ -34,6 +28,7 @@ function Section() {
       <section className="Section">
         <h1 className="Lista">LISTA DE PRODUCTOS</h1>
           <div className="Section-main">
+          
           <button type="button" className="Button" onClick={() => setType('desayuno')}>
           Desayuno
           </button>
@@ -53,7 +48,15 @@ function Section() {
             <Product document= {doc} key={doc.id} agregar= {agregarTarea}/>
             )}
           </div>
+    <div className='izquierda'>
+      {
+        tarea.length === 0 ?
+         'Iniciar hay pedido' :
+         tarea.map(el => <ListaProducto dataP={el.precio} dataPr={el.producto} key={el} />)
+      }
+    </div>
     </section>
+
     )}
 </section>
   )
