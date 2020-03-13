@@ -1,9 +1,15 @@
 import React from 'react';
 
-const Lista = () => {
- return(
-    <p>Hola</p>
- )
+const ListaProducto = ({dataP, dataPr}) => {
+  console.log('vista hermano', dataP, dataPr)
+  return(
+     <section>
+     <p>Vista del Pedido</p>
+     <p>{dataPr}</p>
+     <p>{dataP}</p>
+     </section>
+
+  )
 }
 
-export default Lista;
+export default ListaProducto;
