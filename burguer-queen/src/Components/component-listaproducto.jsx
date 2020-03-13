@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ListaProducto = ({dataP, dataPr}) => {
+const ListaPedidoProducto = ({dataP, dataPr}) => {
   console.log('vista hermano', dataP, dataPr)
   return(
      <section>
@@ -12,4 +12,4 @@ const ListaProducto = ({dataP, dataPr}) => {
   )
 }
 
-export default ListaProducto;
+export default ListaPedidoProducto;
