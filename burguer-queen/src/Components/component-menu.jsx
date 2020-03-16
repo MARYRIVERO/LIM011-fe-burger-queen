@@ -42,17 +42,21 @@ function Menu() {
           Bebidas
           </button>
            </div>
-          <div className="p">
+           <div className="p">
             {value.docs.filter(doc => doc.data().categoria === type)
             .map(doc => 
-            <Product document= {doc}  key={doc.id}/>
+            <Product document= {doc} key={doc.id} agregar= {agregarTarea}/>
             )}
           </div>
     <div className='izquierda'>
       {
         tarea.length === 0 ?
+
          'Iniciar hay pedido' :
-         tarea.map(el => <ListaProducto dataP={el.precio} dataPr={el.producto} key={el} />)
+         tarea.map(el =>
+          
+           <ListaProducto dataP={el.precio} dataPr={el.producto} key={el.producto} />)
+        
       }
     </div>
     </section>
@@ -63,4 +67,3 @@ function Menu() {
 };
 
 export default Menu;
-
