@@ -1,15 +1,14 @@
-import React from 'react';
+import React from "react";
 
-const ItemProducto = ({producto, precio}) => {
-  console.log('vista primo', producto, precio)
-  return(
-     <section>
-     <p>Vista del Pedido</p>
-     <p>{producto}</p> 
-     <p>{precio}</p>
-     </section>
+const ItemProducto = ({dataProducto}) => {
+  console.log('vista primo', dataProducto)
+return(
+  <section>
+  <p>{dataProducto.producto}</p>
+  <p>{dataProducto.precio}</p>
 
-  )
+  </section>
+)
 }
 
 export default ItemProducto;
