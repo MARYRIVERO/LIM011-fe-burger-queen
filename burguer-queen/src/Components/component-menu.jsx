@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import firebase from '../firebaseconfig';
 import Product from './component-product';
-import './component-menu.css'
-import ListaProducto from './component-listaproducto';
+import './component-menu.css';
 
-function Menu() {
+function Menu({agregar}) {
   const [type, setType] = useState('desayuno');
   const [value, loading, error] = useCollection(
     firebase.firestore().collection('Menu'),
@@ -13,13 +12,6 @@ function Menu() {
       snapshotListenOptions: { includeMetadataChanges: true },
     }
   )
-
-    const [tarea, setTarea] = useState([]);
-    const agregarTarea = (objTarea) => {
-      console.log('vista padre',objTarea);
-      const newArr =  tarea.concat([ objTarea ]);
-      setTarea(newArr);
-  }
    return (
       <section>
         {error && <strong>Error: {JSON.stringify(error)}</strong>}
@@ -42,23 +34,12 @@ function Menu() {
           Bebidas
           </button>
            </div>
-           <div className="p">
+          <div className="p">
             {value.docs.filter(doc => doc.data().categoria === type)
             .map(doc => 
-            <Product document= {doc} key={doc.id} agregar= {agregarTarea}/>
+            <Product document={doc} key={doc.id} agrega={agregar}/>
             )}
           </div>
-    <div className='izquierda'>
-      {
-        tarea.length === 0 ?
-
-         'Iniciar hay pedido' :
-         tarea.map(el =>
-          
-           <ListaProducto dataP={el.precio} dataPr={el.producto} key={el.producto} />)
-        
-      }
-    </div>
     </section>
 
     )}
