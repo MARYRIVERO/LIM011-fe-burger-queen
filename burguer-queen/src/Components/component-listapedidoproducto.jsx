@@ -1,15 +1,30 @@
 import React from 'react';
 import ItemProduct from './component-itemproducto';
 
-const ListaPedidoProducto = ({dataP, dataPr,el}) => {
-  console.log('vista hermano', dataP, dataPr)
+const ListaPedidoProducto = ({array}) => {
+  console.log('vista hermano', array)
   return(
-     <section  key={el}>
+    
+     <section>
      <p>Vista del Pedido</p>
-     <ItemProduct producto = {dataP} precio={dataPr}/>
+     {
+      array.length === 0 ?
+      'Iniciar Pedido' :
+      array.map(el => <ItemProduct dataProducto={el} key={el.id} />)
+    }
      </section>
 
   )
 }
 
 export default ListaPedidoProducto;
+
+
+
+
+
+      // {
+      //   tarea.length === 0 ?
+      //    'Iniciar Pedido' :
+      //    tarea.map(el => <ListaPedidoProducto dataP={el.precio} dataPr={el.producto} key={el} />)
+      // }
