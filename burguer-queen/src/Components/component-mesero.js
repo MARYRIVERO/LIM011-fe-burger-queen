@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Menu from './component-menu';
-import ListaPedidoProducto from './component-listaproducto';
+import ListaPedidoProducto from './component-listapedidoproducto';
 
 const ComponentMesero = () => {
 
