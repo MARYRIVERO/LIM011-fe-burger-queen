@@ -48,4 +48,3 @@ function Menu({agregar}) {
 };
 
 export default Menu;
-
