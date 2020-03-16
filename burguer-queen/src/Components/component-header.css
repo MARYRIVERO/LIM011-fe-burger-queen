@@ -12,3 +12,10 @@
   pointer-events: none;
   align-items: flex-end;
 }
+
+
+.vista-mesero {
+
+  background: royalblue;
+  justify-content: space-around;
+}
