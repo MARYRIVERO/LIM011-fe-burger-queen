@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Menu from './component-menu';
 import ListaPedidoProducto from './component-listapedidoproducto';
+import './component-menu.css'
 
 const ComponentMesero = () => {
 
@@ -22,9 +23,14 @@ const ComponentMesero = () => {
   }
 }
   return (
-    <div> 
+    <div className="contenedor"> 
+    <div className="uno">
       <Menu agregar={agregarTarea}/>
+      </div>
+      
+      <div className="dos">
       <ListaPedidoProducto array = {arrayProductosOrden}/>
+      </div>
     </div>
    )
    };
