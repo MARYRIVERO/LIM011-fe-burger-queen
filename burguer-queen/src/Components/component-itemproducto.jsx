@@ -19,7 +19,6 @@ const ItemProducto = ({ dataProducto }) => {
       S/.
       {dataProducto.precio * dataProducto.cantidad}
 
-
     </section>
   )
 }
