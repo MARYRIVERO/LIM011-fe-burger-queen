@@ -45,19 +45,23 @@
 
 .contenedor{
   display: flex;
-  justify-content: space-between;
   flex-direction: row;
 }
 
 .uno{
 background: darkkhaki;
+width: 50%;
 }
 .dos{
   background: cornflowerblue;
+  width: 50%;
 }
 .lista{
   background: darkgreen;
 }
 .itemproducto{
+  display: flex;
   background: darkorchid;
+  justify-content: space-between;
+  flex-direction: row;
 }
