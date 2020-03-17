@@ -17,7 +17,7 @@ function Menu({agregar}) {
         {error && <strong>Error: {JSON.stringify(error)}</strong>}
         {loading && <span> Loading...</span>}
         {value && (
-      <section className="Section">
+      <section>
         <h1 className="Lista">LISTA DE PRODUCTOS</h1>
           <div className="Section-main">
           
