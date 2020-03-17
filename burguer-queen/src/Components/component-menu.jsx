@@ -4,7 +4,7 @@ import firebase from '../firebaseconfig';
 import Product from './component-product';
 import './component-menu.css';
 
-function Menu({agregar}) {
+function Menu({ agregar }) {
   const [type, setType] = useState('desayuno');
   const [value, loading, error] = useCollection(
     firebase.firestore().collection('Menu'),
@@ -12,38 +12,38 @@ function Menu({agregar}) {
       snapshotListenOptions: { includeMetadataChanges: true },
     }
   )
-   return (
-      <section>
-        {error && <strong>Error: {JSON.stringify(error)}</strong>}
-        {loading && <span> Loading...</span>}
-        {value && (
-      <section>
-        <h1 className="Lista">LISTA DE PRODUCTOS</h1>
+  return (
+    <section>
+      {error && <strong>Error: {JSON.stringify(error)}</strong>}
+      {loading && <span> Loading...</span>}
+      {value && (
+        <section>
+          <h1 className="Lista">LISTA DE PRODUCTOS</h1>
           <div className="Section-main">
-          
-          <button type="button" className="Button" onClick={() => setType('desayuno')}>
-          Desayuno
+
+            <button type="button" className="Button" onClick={() => setType('desayuno')}>
+              Desayuno
           </button>
-          <button type="button" className="Button" onClick={() => setType('hamburguesa')}>
-           Hamburguesas
+            <button type="button" className="Button" onClick={() => setType('hamburguesa')}>
+              Hamburguesas
           </button>
-          <button type="button" className="Button" onClick={() => setType('acompañamientos')}>
-          Acompañamientos
+            <button type="button" className="Button" onClick={() => setType('acompañamientos')}>
+              Acompañamientos
           </button>
-          <button type="button" className="Button" onClick={() => setType('bebida')}>
-          Bebidas
+            <button type="button" className="Button" onClick={() => setType('bebida')}>
+              Bebidas
           </button>
-           </div>
+          </div>
           <div className="p">
             {value.docs.filter(doc => doc.data().categoria === type)
-            .map(doc => 
-            <Product document={doc} key={doc.id} agrega={agregar}/>
-            )}
+              .map(doc =>
+                <Product document={doc} key={doc.id} agrega={agregar} />
+              )}
           </div>
-    </section>
+        </section>
 
-    )}
-</section>
+      )}
+    </section>
   )
 };
 
