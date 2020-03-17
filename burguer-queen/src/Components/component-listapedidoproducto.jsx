@@ -18,13 +18,3 @@ const ListaPedidoProducto = ({array}) => {
 }
 
 export default ListaPedidoProducto;
-
-
-
-
-
-      // {
-      //   tarea.length === 0 ?
-      //    'Iniciar Pedido' :
-      //    tarea.map(el => <ListaPedidoProducto dataP={el.precio} dataPr={el.producto} key={el} />)
-      // }
