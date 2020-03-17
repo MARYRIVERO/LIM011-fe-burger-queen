@@ -16,7 +16,7 @@ const ItemProducto = ({ dataProducto }) => {
       <p>{dataProducto.producto}</p>
       <p>{dataProducto.precio}</p>
       <p> S/. {dataProducto.precio * cantidad}</p>
-
+      <input type="button" value ="Eliminar" />
     </section>
   )
 }
