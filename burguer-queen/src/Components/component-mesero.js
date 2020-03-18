@@ -24,14 +24,13 @@ const ComponentMesero = () => {
 }
   return (
     <div className="contenedor"> 
-    <div className="uno">
+      <div className="uno">
       <Menu agregar={agregarTarea}/>
       </div>
-      
       <div className="dos">
-      <ListaPedidoProducto array = {arrayProductosOrden}/>
+        <ListaPedidoProducto array = {arrayProductosOrden}/>
       </div>
-    </div>
+     </div>
    )
    };
 

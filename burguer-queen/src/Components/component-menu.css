@@ -2,6 +2,7 @@
   background: #fffe4b;
   background-size: contain;
 }
+
 .Section-main {
   background: blue;
   margin: 1em;
@@ -10,10 +11,12 @@
   justify-content: center;
   flex-direction: row;
 }
-.Lista{
+
+.Lista {
   justify-items: center;
   font-size: 2em;
 }
+
 .Button {
   font-size: 1em;
   color: white;
@@ -22,43 +25,49 @@
   width: 140px;
   height: 50px;
 }
+
 .prod {
   margin: 1em;
   width: 10em;
   background: coral;
   flex-direction: column;
 }
-.p{
+
+.p {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   flex-direction: row;
 }
 
-.izquierda{
-    display: block;
-    text-align: right;
-    margin-left: 0;
-    margin-right: 0;
-    font-weight: bold;
+.izquierda {
+  display: block;
+  text-align: right;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
 }
 
-.contenedor{
+.contenedor {
   display: flex;
   flex-direction: row;
 }
+
 
 .uno{
 background: darkkhaki;
 width: 50%;
 }
-.dos{
+
+.dos {
   background: cornflowerblue;
   width: 50%;
 }
-.lista{
+
+.lista {
   background: darkgreen;
 }
+
 .itemproducto{
   display: flex;
   background: darkorchid;
