@@ -7,7 +7,7 @@ const ComponentMesero = () => {
 
   const [arrayProductosOrden, setArrayProductosOrden] = useState([]);
     const agregarTarea = (objTarea, Id) => {
-      console.log('vista padre',objTarea); 
+      // console.log('vista padre',objTarea); 
 
       let arrayId = arrayProductosOrden.filter(el => el.id === Id)
       console.log(arrayId);
@@ -21,6 +21,7 @@ const ComponentMesero = () => {
       const newArr =  arrayProductosOrden.concat([ obj ]);
       setArrayProductosOrden(newArr);
   }
+
 }
   return (
     <div className="contenedor"> 
@@ -28,7 +29,7 @@ const ComponentMesero = () => {
       <Menu agregar={agregarTarea}/>
       </div>
       <div className="dos">
-        <ListaPedidoProducto array = {arrayProductosOrden}/>
+        <ListaPedidoProducto array = {arrayProductosOrden} nuevoArray= {setArrayProductosOrden}/>
       </div>
      </div>
    )
