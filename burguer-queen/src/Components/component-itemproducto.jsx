@@ -17,8 +17,12 @@ const ItemProducto = ({ dataProducto }) => {
       <p>{dataProducto.producto}</p>
       <p>{dataProducto.precio}</p>
       <p> S/. {dataProducto.precio * cantidad}</p>
+<<<<<<< HEAD
 
 
+=======
+      <input type="button" value ="Eliminar" />
+>>>>>>> 013e15b85ab7fa43e99c809bb338b4aad624ce29
     </section>
   )
 }
