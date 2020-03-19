@@ -39,10 +39,23 @@ const ComponentMesero = () => {
      setState({}); 
 };
 
+  const incrementar = (productoId, cant) => {
+   const arrNew = arrayProductosOrden.map((element) => {
+     if (productoId === element.id) {
+      return {
+          ...element,
+          cantidad: cant,
+        };
+      }
+       return element;
+     });
+     setArrayProductosOrden(arrNew);
+    };
+
     const total = () =>{
       let totalprecio = 0;
      if(arrayProductosOrden.length !== 0){
-      totalprecio = arrayProductosOrden.reduce((acum, obj) => acum + obj.precio, 0)
+      totalprecio = arrayProductosOrden.reduce((acum, obj) => acum + obj.precio * obj.cantidad, 0)
       console.log('precio total', totalprecio);
       }
       return totalprecio
@@ -54,7 +67,7 @@ const ComponentMesero = () => {
       <Menu agregar={agregarTarea}/>
       </div>
       <div className="dos">
-        <ListaPedidoProducto array={arrayProductosOrden} eliminar={eliminarProducto} />
+        <ListaPedidoProducto array={arrayProductosOrden} eliminar={eliminarProducto}  cantidad= {incrementar}/>
       </div>
       <div>  
       <p>Total S/. {total()}</p>

@@ -2,7 +2,7 @@ import React  from 'react';
 import ItemProduct from './component-itemproducto';
 import './component-menu.css';
 
-const ListaPedidoProducto = ({ array, eliminar}) => {
+const ListaPedidoProducto = ({ array, eliminar, cantidad}) => {
 
   return (
     <section>
@@ -16,7 +16,7 @@ const ListaPedidoProducto = ({ array, eliminar}) => {
       {
         array.length === 0 ?
           'Iniciar Pedido' :
-          array.map((el, index) => <ItemProduct dataProducto={el} key={index} eliminarProducto={eliminar} />)
+          array.map((el, index) => <ItemProduct dataProducto={el} key={index} eliminarProducto={eliminar} cantidadproducto={cantidad} />)
       }
     </section>
   )

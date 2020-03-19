@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ItemProducto = ({ dataProducto, eliminarProducto }) => {
+const ItemProducto = ({ dataProducto, eliminarProducto, cantidadproducto }) => {
   const { cantidad, producto, precio } = dataProducto;
 
   const [Cantidad, setCantidad] = useState(cantidad);
@@ -13,8 +13,8 @@ const ItemProducto = ({ dataProducto, eliminarProducto }) => {
         defaultValue={cantidad}
         onClick={(e) => {
           const p = e.target.value;
+          cantidadproducto(dataProducto.id, p);
           setCantidad(p);
-
         }}
       />
       <p>{producto}</p>
