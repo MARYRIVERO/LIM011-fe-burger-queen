@@ -2,7 +2,7 @@ import React  from 'react';
 import ItemProduct from './component-itemproducto';
 import './component-menu.css';
 
-const ListaPedidoProducto = ({ array, eliminar, preciototal}) => {
+const ListaPedidoProducto = ({ array, eliminar,}) => {
 
 
   return (

@@ -32,10 +32,13 @@ const ComponentMesero = () => {
 };
 
     const total = () =>{
+      let totalprecio = 0;
      if(arrayProductosOrden.length !== 0){
-      let totalprecio = arrayProductosOrden.reduce((acum, obj) => acum + obj.precio * obj.cantidad);
-      return totalprecio;
-     }}
+      totalprecio = arrayProductosOrden.reduce((acum, obj) => acum + obj.precio, 0)
+      console.log('precio total', totalprecio);
+      }
+      return totalprecio
+    }
           
 
 
@@ -49,7 +52,7 @@ const ComponentMesero = () => {
         <ListaPedidoProducto array={arrayProductosOrden} eliminar={eliminarProducto} />
       </div>
       <div>  
-        <p>Total S/. {total()} </p>
+      <p>Total S/. {total()}</p>
      </div>
      </div>
    )
