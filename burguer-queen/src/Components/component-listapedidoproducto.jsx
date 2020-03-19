@@ -2,16 +2,8 @@ import React  from 'react';
 import ItemProduct from './component-itemproducto';
 import './component-menu.css';
 
-const ListaPedidoProducto = ({ array, nuevoArray }) => {
+const ListaPedidoProducto = ({ array, eliminar}) => {
 
-const estadoArray = array;
-  const eliminarProducto  = (obj) => {
-   console.log("antes", estadoArray)
-   const indice= estadoArray.indexOf(obj);
-   if ( indice >= 0)  estadoArray.splice(indice ,1);
-nuevoArray(estadoArray);
-    console.log("despues", estadoArray)
-  };
 
   return (
     <section>
@@ -23,9 +15,9 @@ nuevoArray(estadoArray);
         </form>
       </div>
       {
-        estadoArray.length === 0 ?
+        array.length === 0 ?
           'Iniciar Pedido' :
-          estadoArray.map((el, index) => <ItemProduct dataProducto={el} key={index} eliminar={eliminarProducto}   />)
+          array.map((el, index) => <ItemProduct dataProducto={el} key={index} eliminarProducto={eliminar}   />)
       }
     </section>
   )

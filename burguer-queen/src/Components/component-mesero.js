@@ -21,15 +21,21 @@ const ComponentMesero = () => {
       const newArr =  arrayProductosOrden.concat([ obj ]);
       setArrayProductosOrden(newArr);
   }
-
 }
+  const eliminarProducto  = (obj) => {
+    console.log('Producto que queremos borrar', obj);
+    const indice = arrayProductosOrden.indexOf(obj);
+    console.log('indice del producto', obj);
+     if ( indice >= 0) { arrayProductosOrden.splice(indice ,1) }
+};
+
   return (
     <div className="contenedor"> 
       <div className="uno">
       <Menu agregar={agregarTarea}/>
       </div>
       <div className="dos">
-        <ListaPedidoProducto array = {arrayProductosOrden} nuevoArray= {setArrayProductosOrden}/>
+        <ListaPedidoProducto array={arrayProductosOrden} eliminar={eliminarProducto}/>
       </div>
      </div>
    )
