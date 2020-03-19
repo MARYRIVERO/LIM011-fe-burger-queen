@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Menu from './component-menu';
 import ListaPedidoProducto from './component-listapedidoproducto';
 import './component-menu.css'
 
 const ComponentMesero = () => {
+  let [,setState]=useState(); 
 
   const [arrayProductosOrden, setArrayProductosOrden] = useState([]);
     const agregarTarea = (objTarea, Id) => {
@@ -22,21 +23,27 @@ const ComponentMesero = () => {
       setArrayProductosOrden(newArr);
   }
 }
-  const eliminarProducto  = (obj) => {
+  function eliminarProducto(obj) {
 
     const temp = arrayProductosOrden;
     console.log('Producto que queremos borrar', obj);
-    const indice = arrayProductosOrden.indexOf(obj);
+    const indice = temp.indexOf(obj);
     console.log('indice del producto', obj);
-     if ( indice >= 0) { setArrayProductosOrden(temp.splice(indice ,1) )}
+    
+     if ( indice >= 0) {
+       temp.splice(indice ,1) 
+
+      }
+      setArrayProductosOrden(temp)
      console.log(arrayProductosOrden);
+     setState({}); 
 };
 
-    const total = () =>{
-     if(arrayProductosOrden.length !== 0){
-      let totalprecio = arrayProductosOrden.reduce((acum, obj) => acum + obj.precio * obj.cantidad);
-      return totalprecio;
-     }}
+    // const total = () =>{
+    //  if(arrayProductosOrden.length !== 0){
+    //   let totalprecio = arrayProductosOrden.reduce((acum, obj) => acum + obj.precio * obj.cantidad);
+    //   return totalprecio;
+    //  }}
           
   return (
     <div className="contenedor"> 
@@ -47,8 +54,11 @@ const ComponentMesero = () => {
         <ListaPedidoProducto array={arrayProductosOrden} eliminar={eliminarProducto} />
       </div>
       <div>  
-        <p>Total S/. {total()} </p>
+        {/* <p>Total S/. {total()} </p> */}
      </div>
+     </div>
+  )
+};
 
  export default ComponentMesero;
 

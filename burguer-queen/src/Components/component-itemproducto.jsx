@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ItemProducto = ({ dataProducto, eliminarProducto, total }) => {
+const ItemProducto = ({ dataProducto, eliminarProducto }) => {
   const { cantidad, producto, precio } = dataProducto;
 
   const [Cantidad, setCantidad] = useState(cantidad);
