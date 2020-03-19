@@ -25,6 +25,7 @@ const ComponentMesero = () => {
   const eliminarProducto  = (obj) => {
     console.log('Producto que queremos borrar', obj);
     const indice = arrayProductosOrden.indexOf(obj);
+    console.log('indice del producto', obj);
      if ( indice >= 0) { arrayProductosOrden.splice(indice ,1) }
 };
 
