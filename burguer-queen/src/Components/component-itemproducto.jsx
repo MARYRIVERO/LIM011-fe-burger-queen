@@ -23,10 +23,8 @@ const ItemProducto = ({ dataProducto, eliminarProducto, total }) => {
 
       <input type="button" value="Eliminar"
         onClick={() => {
-
-          const idElimina = dataProducto;
-          eliminarProducto(idElimina)
-            ;
+            const idElimina= dataProducto;
+            eliminarProducto(idElimina);
         }}
       />
     </section>

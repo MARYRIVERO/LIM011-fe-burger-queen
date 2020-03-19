@@ -23,6 +23,7 @@ const ComponentMesero = () => {
   }
 }
   const eliminarProducto  = (obj) => {
+
     const temp = arrayProductosOrden;
     console.log('Producto que queremos borrar', obj);
     const indice = arrayProductosOrden.indexOf(obj);
@@ -37,9 +38,6 @@ const ComponentMesero = () => {
       return totalprecio;
      }}
           
-
-
-
   return (
     <div className="contenedor"> 
       <div className="uno">
@@ -51,11 +49,6 @@ const ComponentMesero = () => {
       <div>  
         <p>Total S/. {total()} </p>
      </div>
-     </div>
-   )
-   };
-
-
 
  export default ComponentMesero;
 
