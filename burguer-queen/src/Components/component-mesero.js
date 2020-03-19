@@ -7,7 +7,7 @@ const ComponentMesero = () => {
 
   const [arrayProductosOrden, setArrayProductosOrden] = useState([]);
     const agregarTarea = (objTarea, Id) => {
-      console.log('vista padre',objTarea); 
+      // console.log('vista padre',objTarea); 
 
       let arrayId = arrayProductosOrden.filter(el => el.id === Id)
       console.log(arrayId);
@@ -22,13 +22,19 @@ const ComponentMesero = () => {
       setArrayProductosOrden(newArr);
   }
 }
+  const eliminarProducto  = (obj) => {
+    console.log('Producto que queremos borrar', obj);
+    const indice = arrayProductosOrden.indexOf(obj);
+     if ( indice >= 0) { arrayProductosOrden.splice(indice ,1) }
+};
+
   return (
     <div className="contenedor"> 
       <div className="uno">
       <Menu agregar={agregarTarea}/>
       </div>
       <div className="dos">
-        <ListaPedidoProducto array = {arrayProductosOrden}/>
+        <ListaPedidoProducto array={arrayProductosOrden} eliminar={eliminarProducto}/>
       </div>
      </div>
    )

@@ -1,23 +1,33 @@
 import React, { useState } from "react";
 
-const ItemProducto = ({ dataProducto }) => {
-  const [cantidad, setCantidad] = useState(dataProducto.cantidad);
+const ItemProducto = ({ dataProducto, eliminarProducto }) => {
+  const{cantidad, producto, precio}= dataProducto;
   
+  const [Cantidad, setCantidad] = useState(cantidad);
   console.log('vista primo', dataProducto)
   return (
     <section className="itemproducto">
 
       <input type="number" min="1" max="100"
-        defaultValue={dataProducto.cantidad}
+        defaultValue={cantidad}
         onClick={(e) => {
           const p = e.target.value;
           setCantidad(p);
+
         }}
       />
-      <p>{dataProducto.producto}</p>
-      <p>{dataProducto.precio}</p>
-      <p> S/. {dataProducto.precio * cantidad}</p>
-      <input type="button" value ="Eliminar" />
+      <p>{producto}</p>
+      <p>{precio}</p>
+      <p> S/. {precio * Cantidad}</p>
+
+      <input type="button" value = "Eliminar"
+        onClick={() => {
+
+            const idElimina= dataProducto;
+            eliminarProducto(idElimina)
+          ;
+        }}
+      />    
     </section>
   )
 }
