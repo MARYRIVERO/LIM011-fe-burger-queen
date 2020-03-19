@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 
-const ItemProducto = ({ dataProducto, eliminarProducto }) => {
-  const{cantidad, producto, precio}= dataProducto;
-  
+const ItemProducto = ({ dataProducto, eliminarProducto, total }) => {
+  const { cantidad, producto, precio } = dataProducto;
+
   const [Cantidad, setCantidad] = useState(cantidad);
   console.log('vista primo', dataProducto)
+
   return (
     <section className="itemproducto">
 
@@ -20,14 +21,14 @@ const ItemProducto = ({ dataProducto, eliminarProducto }) => {
       <p>{precio}</p>
       <p> S/. {precio * Cantidad}</p>
 
-      <input type="button" value = "Eliminar"
+      <input type="button" value="Eliminar"
         onClick={() => {
 
-            const idElimina= dataProducto;
-            eliminarProducto(idElimina)
-          ;
+          const idElimina = dataProducto;
+          eliminarProducto(idElimina)
+            ;
         }}
-      />    
+      />
     </section>
   )
 }

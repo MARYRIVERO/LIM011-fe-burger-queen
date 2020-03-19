@@ -23,11 +23,22 @@ const ComponentMesero = () => {
   }
 }
   const eliminarProducto  = (obj) => {
+    const temp = arrayProductosOrden;
     console.log('Producto que queremos borrar', obj);
     const indice = arrayProductosOrden.indexOf(obj);
     console.log('indice del producto', obj);
-     if ( indice >= 0) { arrayProductosOrden.splice(indice ,1) }
+     if ( indice >= 0) { setArrayProductosOrden(temp.splice(indice ,1) )}
+     console.log(arrayProductosOrden);
 };
+
+    const total = () =>{
+     if(arrayProductosOrden.length !== 0){
+      let totalprecio = arrayProductosOrden.reduce((acum, obj) => acum + obj.precio * obj.cantidad);
+      return totalprecio;
+     }}
+          
+
+
 
   return (
     <div className="contenedor"> 
@@ -35,11 +46,16 @@ const ComponentMesero = () => {
       <Menu agregar={agregarTarea}/>
       </div>
       <div className="dos">
-        <ListaPedidoProducto array={arrayProductosOrden} eliminar={eliminarProducto}/>
+        <ListaPedidoProducto array={arrayProductosOrden} eliminar={eliminarProducto} />
       </div>
+      <div>  
+        <p>Total S/. {total()} </p>
+     </div>
      </div>
    )
    };
+
+
 
  export default ComponentMesero;
 
