@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ItemProducto = ({ dataProducto, eliminarProducto, total }) => {
+const ItemProducto = ({ dataProducto, eliminarProducto }) => {
   const { cantidad, producto, precio } = dataProducto;
 
   const [Cantidad, setCantidad] = useState(cantidad);
@@ -23,10 +23,8 @@ const ItemProducto = ({ dataProducto, eliminarProducto, total }) => {
 
       <input type="button" value="Eliminar"
         onClick={() => {
-
-          const idElimina = dataProducto;
-          eliminarProducto(idElimina)
-            ;
+            const idElimina= dataProducto;
+            eliminarProducto(idElimina);
         }}
       />
     </section>
