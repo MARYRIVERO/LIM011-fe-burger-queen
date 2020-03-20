@@ -6,6 +6,7 @@ const ItemProducto = ({ dataProducto, eliminarProducto, cantidadproducto }) => {
   const [Cantidad, setCantidad] = useState(cantidad);
   console.log('vista primo', dataProducto)
 
+
   return (
     <section className="itemproducto">
 
