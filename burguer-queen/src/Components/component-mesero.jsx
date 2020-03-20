@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import Menu from './component-menu';
 import ListaPedidoProducto from './component-listapedidoproducto';
-import './component-menu.css'
+import firebase from 'firebase/app';
+import 'firebase/firestore';
+import './component-menu.css';
 
 const ComponentMesero = () => {
   let [,setState]=useState(); 
+
+  const [arrayNombre, setArrayNombre] = useState([]);
+  const [arrayMesa, setArrayMesa] = useState([]);
 
   const [arrayProductosOrden, setArrayProductosOrden] = useState([]);
     const agregarTarea = (objTarea, Id) => {
@@ -23,8 +28,13 @@ const ComponentMesero = () => {
       setArrayProductosOrden(newArr);
   }
 }
-  function eliminarProducto(obj) {
 
+  const buscaNombreyMesa = (nombre, mesa) => {
+    setArrayNombre(nombre);
+    setArrayMesa(mesa);
+}
+
+  function eliminarProducto(obj) {
     const temp = arrayProductosOrden;
     console.log('Producto que queremos borrar', obj);
     const indice = temp.indexOf(obj);
@@ -41,12 +51,14 @@ const ComponentMesero = () => {
 
   const incrementar = (productoId, cant) => {
    const arrNew = arrayProductosOrden.map((element) => {
+    console.log('antes', element);
      if (productoId === element.id) {
       return {
           ...element,
           cantidad: cant,
         };
       }
+      console.log('despues', element);
        return element;
      });
      setArrayProductosOrden(arrNew);
@@ -60,26 +72,49 @@ const ComponentMesero = () => {
       }
       return totalprecio
     }
-          
+
+    const enviarOrden = (nombre, mesa, producto, fecha, estado, totalp) => 
+     firebase
+    .firestore()
+    .collection('order')
+    .add({
+      nombre,
+      mesa,
+      producto,
+      fecha,
+      estado,
+      totalp,
+    })
+  ;
+              
   return (
     <div className="contenedor"> 
       <div className="uno">
       <Menu agregar={agregarTarea}/>
       </div>
       <div className="dos">
-        <ListaPedidoProducto array={arrayProductosOrden} eliminar={eliminarProducto}  cantidad= {incrementar}/>
+        <ListaPedidoProducto array={arrayProductosOrden} eliminar={eliminarProducto}  cantidad= {incrementar} buscar={buscaNombreyMesa}/>
       </div>
       <div>  
       <p>Total S/. {total()}</p>
+     </div>
+     <div>
+     <button type="button" onClick={() => {
+            enviarOrden(arrayNombre, arrayMesa, arrayProductosOrden, new Date(), 'pendiente', total())
+              .then(() => {
+                setArrayProductosOrden([]);
+                setArrayNombre('');
+                setArrayMesa('');
+              });
+          }
+        }
+      >
+        Enviar
+      </button>
      </div>
      </div>
   )
 };
 
  export default ComponentMesero;
-
-
-
-
-
 
