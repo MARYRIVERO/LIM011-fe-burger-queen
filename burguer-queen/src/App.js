@@ -1,10 +1,10 @@
 import React from 'react';
-import Logo from '../src/Components/component-logo.js';
-import Section from '../src/Components/component-section.js';
+import Logo from './Components/component-logo';
+import Menu from './Components/component-Menu';
 
 const App = () => 
     <div> 
       <Logo />
-      <Section />
+      <Menu />
     </div>;
 export default App;
