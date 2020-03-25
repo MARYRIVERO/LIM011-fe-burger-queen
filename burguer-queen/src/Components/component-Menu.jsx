@@ -1,25 +1,59 @@
 import React from 'react';
 import './component-Menu.css';
 
-const Desayuno = () => console.log('Desayuno');
-
-const Almuerzo = () => console.log('Almuerzo');
-
-const Bebidas = () => console.log(' Bebidas');
-
-const Acompañamiento = () => console.log('Acompañamiento');
-
-const Menu = () => 
+function Menu() {
+  return (
     <div className="Menu">
+      
       <main>
-          <h1>Listado de Productos</h1>
+          <h1>Lista de Productos</h1>
           <div className="Section-main" >
-          <button className="Button" onClick={ Desayuno } >Desayuno</button>
-          <button className="Button" onClick={ Almuerzo } >Almuerzo y Cena</button>
-          <button className="Button" onClick={ Bebidas } >Desayuno</button>
-          <button className="Button" onClick={ Acompañamiento } >Almuerzo y Cena</button>
-          </div>
-      </main>
-    </div>;
-
+          <button
+            type="button"
+            className="Btn Desayuno"
+            onClick={(event) => {
+            event.preventDefault();
+            console.log('desayuno');
+            }}
+          >
+              Desayuno
+          </button>
+       
+          <button
+            type="button"
+            className="Btn Almuerzo"
+            onClick={(event) => {
+            event.preventDefault();
+            Menu('almuerzo y cena');
+            }}
+          > 
+            Almuerzo y cena
+          </button>
+                 
+          <button
+            type="button"
+            className="Btn Acompañamiento"
+            onClick={(event) => {
+            event.preventDefault();
+            Menu('Acompañammientos');
+            }}
+          > 
+            Acompañamientos
+          </button>
+                 
+          <button
+            type="button"
+            className="Btn bebidas"
+            onClick={(event) => {
+            event.preventDefault();
+            Menu('bebidas');
+            }}
+          > 
+           Bebidas
+          </button>
+        </div>
+        </main>
+    </div>
+);
+}
 export default Menu;
