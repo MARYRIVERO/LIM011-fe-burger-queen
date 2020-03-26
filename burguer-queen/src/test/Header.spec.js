@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { render } from '@testing-library/react'; 
-import Logo from '../src/Components/component-header';
+import Logo from '../Components/component-header';
 
 describe('Header', () => {
   it('Deberia mostrar el logo de la Aplicacion', () => {
