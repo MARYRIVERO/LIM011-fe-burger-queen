@@ -3,7 +3,6 @@ import Menu from './component-menu';
 import ListaPedidoProducto from './component-listapedidoproducto';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
-import './component-menu.css';
 
 const ComponentMesero = () => {
   let [,setState]=useState(); 
@@ -23,6 +22,7 @@ const ComponentMesero = () => {
               producto: objTarea.producto,
               precio: objTarea.precio,
               id: Id,
+              url: objTarea.url,
            }
       const newArr =  arrayProductosOrden.concat([ obj ]);
       setArrayProductosOrden(newArr);
@@ -76,7 +76,7 @@ const ComponentMesero = () => {
     const enviarOrden = (nombre, mesa, producto, fecha, estado, totalp) => 
      firebase
     .firestore()
-    .collection('order')
+    .collection('Orden')
     .add({
       nombre,
       mesa,
@@ -88,33 +88,49 @@ const ComponentMesero = () => {
   ;
               
   return (
-    <div className="contenedor"> 
-      <div className="uno">
+    <section>
+    <div className="container-fluid ">
+      <div className="row">
+      <div className="col-sm-12 col-md-6 ">
       <Menu agregar={agregarTarea}/>
       </div>
-      <div className="dos">
+      <div className="col-sm-12 col-md-6 plomo ">
         <ListaPedidoProducto array={arrayProductosOrden} eliminar={eliminarProducto}  cantidad= {incrementar} buscar={buscaNombreyMesa}/>
       </div>
-      <div>  
-      <p>Total S/. {total()}</p>
+      </div>
      </div>
-     <div>
-     <button type="button" onClick={() => {
-            enviarOrden(arrayNombre, arrayMesa, arrayProductosOrden, new Date(), 'pendiente', total())
-              .then(() => {
-                setArrayProductosOrden([]);
-                setArrayNombre('');
-                setArrayMesa('');
-              });
-          }
-        }
-      >
-        Enviar
-      </button>
+
+   <div className="container">
+   <div className=" row justify-content-end fixed-bottom ">
+     <div className="col-sm-3 verde text-center" >
+     <h3>Total S/. {total()}</h3>
      </div>
-     </div>
+     <div className="col-sm-2" >
+      <button  className="btn btn-secondary btn-lg btn-block" type="button" onClick={() => {
+      enviarOrden(arrayNombre, arrayMesa, arrayProductosOrden, new Date(), 'pendiente', total())
+        .then(() => {
+          setArrayProductosOrden([]);
+          setArrayNombre('');
+          setArrayMesa('');
+        });
+    }
+  }
+>
+  Enviar
+</button>
+</div>
+</div>
+</div>
+</section>
   )
 };
 
  export default ComponentMesero;
 
+
+
+
+ 
+
+//  arcentus 
+//  everis

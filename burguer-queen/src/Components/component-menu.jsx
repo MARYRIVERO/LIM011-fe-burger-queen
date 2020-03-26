@@ -17,20 +17,19 @@ function Menu({ agregar }) {
       {error && <strong>Error: {JSON.stringify(error)}</strong>}
       {loading && <span> Loading...</span>}
       {value && (
-        <section>
-          <h1 className="Lista">LISTA DE PRODUCTOS</h1>
-          <div className="Section-main">
-
-            <button type="button" className="Button" onClick={() => setType('desayuno')}>
+        <section >
+          <h1 className="text-center">LISTA DE PRODUCTOS</h1>
+          <div className="p">
+            <button type="button" className="btn btn-success m-3" onClick={() => setType('desayuno')}>
               Desayuno
           </button>
-            <button type="button" className="Button" onClick={() => setType('hamburguesa')}>
+            <button type="button" className="btn btn-success m-3" onClick={() => setType('hamburguesa')}>
               Hamburguesas
           </button>
-            <button type="button" className="Button" onClick={() => setType('acompañamientos')}>
+            <button type="button" className="btn btn-success m-3" onClick={() => setType('acompañamientos')}>
               Acompañamientos
           </button>
-            <button type="button" className="Button" onClick={() => setType('bebida')}>
+            <button type="button" className="btn btn-success m-3" onClick={() => setType('bebida')}>
               Bebidas
           </button>
           </div>
