@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useCollection } from 'react-firebase-hooks/firestore';
-import firebase from '../firebaseconfig';
+import firebase from '../firebase/firebaseconfig';
 import Product from './component-product';
 import './component-menu.css';
 

@@ -1,11 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './logo.png';
 import './component-header.css';
 
 const Logo = () =>
-  <div className="App">
+  <div data-testid= "imagen"  className="App">
     <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
+      <img src= { logo } className="App-logo" alt="logo" />
     </header>
   </div>;
 
