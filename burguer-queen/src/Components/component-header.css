@@ -1,17 +1,14 @@
+
 .App-header {
-  background: #9c9c9c;
-  background-size: contain;
-  height: 120px;
-  width: 100%;
-  margin: 0 auto;
+  height:150px;
+  /* background-color: #ccccccff; */
+  background: linear-gradient(80deg, rgb(195, 206, 198), white,rgb(141, 151, 144));
 }
 
 .App-logo {
-  display: flex;
-  width:auto ;
   height: 100%;
-  pointer-events: none;
-  align-items: flex-end;
+  margin-left: 5%;
+
 }
 
 

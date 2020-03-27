@@ -91,7 +91,7 @@ const ComponentMesero = () => {
     <section>
     <div className="container-fluid ">
       <div className="row">
-      <div className="col-sm-12 col-md-6 ">
+      <div className="col-sm-12 col-md-6 mezcla">
       <Menu agregar={agregarTarea}/>
       </div>
       <div className="col-sm-12 col-md-6 plomo ">
