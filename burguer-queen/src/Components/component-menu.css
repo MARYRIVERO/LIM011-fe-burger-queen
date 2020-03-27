@@ -17,11 +17,7 @@
   flex-direction: row;
 }
 .plomo{
-  background: linear-gradient(90deg,rgb(125, 185, 165) ,rgb(178, 185, 184))
-}
-.mezcla {
-  background: linear-gradient(70deg, rgb(167, 240, 215), white);
-
+  background: rgb(110, 106, 106);
 }
 
 .verde{

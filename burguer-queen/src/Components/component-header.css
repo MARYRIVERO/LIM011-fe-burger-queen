@@ -2,7 +2,10 @@
 .App-header {
   height:150px;
   /* background-color: #ccccccff; */
-  background: linear-gradient(80deg, rgb(195, 206, 198), white,rgb(141, 151, 144));
+  /* background: linear-gradient(35deg, rgb(68, 78, 71),  rgb(175, 168, 168),rgb(50, 53, 51),rgb(175, 168, 168)); */
+  background-color: rgb(110, 106, 106);
+  background-image: url(./fondoHeader.svg);
+  background-size: contain;
 }
 
 .App-logo {
@@ -17,3 +20,4 @@
   background: royalblue;
   justify-content: space-around;
 }
+

@@ -18,7 +18,7 @@ function Menu({ agregar }) {
       {loading && <span> Loading...</span>}
       {value && (
         <section >
-          <h1 className="text-center">LISTA DE PRODUCTOS</h1>
+          <h1 className="text-center text-black">LISTA DE PRODUCTOS</h1>
           <div className="p">
             <button type="button" className="btn btn-success m-3" onClick={() => setType('desayuno')}>
               Desayuno
