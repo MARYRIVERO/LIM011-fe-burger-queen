@@ -16,9 +16,8 @@
   justify-content: center;
   flex-direction: row;
 }
-
-.plomo {
-  background: gray;
+.plomo{
+  background: rgb(110, 106, 106);
 }
 
 .verde{

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import { render, fireEvent, wait } from '@testing-library/react';
 import Menu from '../Components/component-menu';
@@ -70,3 +71,35 @@ it('Deberia cambiar los productos al dar click', (done) => {
 //   // despues de dar click al button
 //   expect(input.value).toBe('');
 // });
+=======
+// import React from 'react';
+// import { render } from '@testing-library/react'; 
+// import  Menu from '../Components/component-menu';
+
+
+
+// const { getByText } = render(<Menu />)
+// const aboutAnchorNode = getByText(/about/i)
+
+// describe('Header', () => {
+//     it('Deberia mostrar el boton desayunno de la Aplicacion', () => {
+
+
+
+//     const { getByText } = render(<Menu />)
+//     const element = getByText('Desayuno');
+//     expect(element). 
+//     })
+//   })
+  
+
+
+
+//   describe('Header', () => {
+//     it('Deberia mostrar el logo de la Aplicacion', () => {
+//       const { getByTestId } = render(<Logo/>)
+//       const element = getByTestId('imagen');
+//       expect(element).toBeTruthy()
+//     })
+//   })
+>>>>>>> 437815f603de633ab3017135cf16ebb8bfac606b

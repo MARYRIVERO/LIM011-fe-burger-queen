@@ -1,17 +1,17 @@
+
 .App-header {
-  background: #9c9c9c;
+  height:150px;
+  /* background-color: #ccccccff; */
+  /* background: linear-gradient(35deg, rgb(68, 78, 71),  rgb(175, 168, 168),rgb(50, 53, 51),rgb(175, 168, 168)); */
+  background-color: rgb(110, 106, 106);
+  background-image: url(./fondoHeader.svg);
   background-size: contain;
-  height: 120px;
-  width: 100%;
-  margin: 0 auto;
 }
 
 .App-logo {
-  display: flex;
-  width:auto ;
   height: 100%;
-  pointer-events: none;
-  align-items: flex-end;
+  margin-left: 5%;
+
 }
 
 
@@ -20,3 +20,4 @@
   background: royalblue;
   justify-content: space-around;
 }
+
