@@ -11,9 +11,9 @@ it('Deberia pintar los productos', () => {
     }
 
     const productos  = render( <Product document={objProducto} agrega={ fnagregar }/> );
-    const element = productos.getByTestId('clickProducto');
+    const btnProducto = productos.getByTestId('clickProducto');
     const listaDeNodos = productos.getAllByTestId('item');
-    fireEvent.click(element);
+    fireEvent.click(btnProducto);
 
 
     expect(fnagregar).toHaveBeenCalled();
@@ -21,7 +21,3 @@ it('Deberia pintar los productos', () => {
     expect(getNodeText(listaDeNodos[1])).toBe('S/.5');
 
 });
-
-
-
-    
