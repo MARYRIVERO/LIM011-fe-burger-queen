@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from './logoReina.svg';
+import logo from '../css/logoReina.svg';
 // import fondo from './logo.svg';
-import './component-header.css';
+import '../css/component-header.css';
 
 const Logo = () =>
   <div data-testid= "imagen"  className="App">

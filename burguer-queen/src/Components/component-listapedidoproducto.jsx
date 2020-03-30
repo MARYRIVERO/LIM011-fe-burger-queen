@@ -1,6 +1,6 @@
 import React, {useState, useEffect}  from 'react';
 import ItemProduct from './component-itemproducto';
-import './component-menu.css';
+import '../css/component-menu.css';
 
 const ListaPedidoProducto = ({ array, eliminar, cantidad, buscar}) => {
 

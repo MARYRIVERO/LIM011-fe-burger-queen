@@ -36,13 +36,13 @@ const ItemProducto = ({ dataProducto, eliminarProducto, cantidadproducto }) => {
 export default ItemProducto; 
 
 
-{/* < input  type = " button "  value = " Eliminar "
-        onClick = { () => {
+//  < input  type = " button "  value = " Eliminar "
+//         onClick = { () => {
 
-          const  idElimina  =  dataProducto ;
-          eliminarProducto ( idElimina )
-            ;
-            const  idElimina =  dataProducto ;
-            eliminarProducto ( idElimina );
-        } }
-      /> */}
+//           const  idElimina  =  dataProducto ;
+//           eliminarProducto ( idElimina )
+//             ;
+//             const  idElimina =  dataProducto ;
+//             eliminarProducto ( idElimina );
+//         } }
+//       /> 
