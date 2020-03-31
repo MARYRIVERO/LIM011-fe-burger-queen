@@ -20,13 +20,13 @@ const ListaPedidoProducto = ({ array, eliminar, cantidad, buscar}) => {
   
   return (
     <section>
-      <div>
+      <div data-testid= "listapedido">
         <h1 className="text-center text-white">DETALLES DE PEDIDO</h1>
         <form className="text-center p m-2 p-3 mb-2 bg-success text-white rounded-pill">
-          <label className="mr-2"> Nombre <input className="form-control" type="text"  onChange={functionName } placeholder='Ejemplo: Mary'/> </label>
-          <label> N° de Mesa <input  className="form-control" type="text"  onChange={functionMesa} placeholder='1'/> </label>
+          <label className="mr-2"> Nombre <input className="form-control" type="text"  onChange={functionName } placeholder='Ejemplo: Mary' value={name}/> </label>
+          <label> N° de Mesa <input  className="form-control" type="text"  onChange={functionMesa} placeholder='1'value={mesa}/> </label>
         </form>
-<table class="table table-sm ">
+<table className="table table-sm ">
   <thead>
     <tr>
       <th scope="col">Cantidad</th>
