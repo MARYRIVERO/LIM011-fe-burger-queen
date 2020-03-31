@@ -1,10 +1,9 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
 import ComponenteVistaMesero from './Components/componente-vista-mesero';
-import ComponenteChef from './Components/componete-chef';
+import ComponenteChef from './Components/componente-chef';
 
 const Routes = () => {
-
     return(
      <Switch>
         <Route exact path='/' component={ComponenteVistaMesero} />
