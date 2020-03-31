@@ -36,7 +36,7 @@ function Menu({ agregar }) {
           <div className="p">
             {value.docs.filter(doc => doc.data().categoria === type)
               .map(doc =>
-                <Product document={doc.data()} key={doc.id} agrega={agregar}  />
+                <Product document={doc} key={doc.id} agrega={agregar}  />
               )}
           </div>
         </section>

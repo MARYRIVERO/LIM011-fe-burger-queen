@@ -4,7 +4,7 @@ const ItemProducto = ({ dataProducto, eliminarProducto, cantidadproducto }) => {
   const { cantidad, producto, precio } = dataProducto;
 
   const [Cantidad, setCantidad] = useState(cantidad);
-  // console.log('vista primo', dataProducto)
+  //  console.log('vista primo', dataProducto)
 
 
   return (
@@ -20,16 +20,6 @@ const ItemProducto = ({ dataProducto, eliminarProducto, cantidadproducto }) => {
       <h6 data-testid="items" className="col-sm-5 text-white">{producto}</h6>
       <h6 data-testid="items" className="col-sm-2 text-white">{precio}</h6>
       <h6 data-testid="items" className="col-sm-2 text-white">S/.{precio * Cantidad}</h6>
-
-{/* 
-      <input data-testid= "clickEliminar" type= "button"  value= "Eliminar"
-       onClick = { () => {
-
-         const  idElimina = dataProducto ;
-          eliminarProducto ( idElimina ) ;
-        } }
-       /> */}
-
       <button data-testid= "clickEliminar"  class="btn btn-light" 
        onClick = { () => {
          const  idElimina = dataProducto ;

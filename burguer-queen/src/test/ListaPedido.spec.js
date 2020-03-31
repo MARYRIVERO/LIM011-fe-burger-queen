@@ -1,5 +1,6 @@
 import React from 'react';
 import { render,  fireEvent } from '@testing-library/react';
+import { act } from 'react-dom/test-utils';
 import ListaPedidoProducto from '../Components/component-listapedidoproducto';
 
   
@@ -28,9 +29,12 @@ import ListaPedidoProducto from '../Components/component-listapedidoproducto';
     expect(input2.value).toBe('');
 
     // cambiar el valor del input
+    act(() => {
     fireEvent.change(input1, { target: { value: 'Maria' } });
+    })
+    act(() => {
     fireEvent.change(input2, { target: { value: '2' } });
-
+    })
 
   // verifica cambio del input
   expect(input1.value).toBe('Maria');

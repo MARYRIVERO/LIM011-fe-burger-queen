@@ -1,15 +1,16 @@
 import React from 'react';
-import Logo from './Components/component-header';
-import ComponentMesero from './Components/component-mesero';
-
+import Routes from './Routes';
+import {BrowserRouter} from 'react-router-dom'
 
 const App = () => {
   return (
     <div> 
-      <Logo />
-      <ComponentMesero />
+      <BrowserRouter>
+      <Routes />
+      </BrowserRouter>
     </div>
    )
    };
 
  export default App;
+

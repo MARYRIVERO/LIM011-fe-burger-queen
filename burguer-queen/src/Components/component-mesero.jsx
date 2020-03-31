@@ -95,7 +95,7 @@ const ComponentMesero = () => {
       <Menu agregar={agregarTarea}/>
       </div>
       <div className="col-sm-12 col-md-6 plomo ">
-        <ListaPedidoProducto array={arrayProductosOrden} eliminar={eliminarProducto}  cantidad= {incrementar} buscar={buscaNombreyMesa}/>
+      <ListaPedidoProducto array={arrayProductosOrden} eliminar={eliminarProducto}  cantidad= {incrementar} buscar={buscaNombreyMesa}/>
       </div>
       </div>
      </div>
@@ -103,10 +103,10 @@ const ComponentMesero = () => {
    <div className="container">
    <div className=" row justify-content-end fixed-bottom ">
      <div className="col-sm-3 verde text-center" >
-     <h3>Total S/. {total()}</h3>
+     <h3 data-testid= "montoTotal" >Total S/. {total()}</h3>
      </div>
      <div className="col-sm-2" >
-      <button  className="btn btn-secondary btn-lg btn-block" type="button" onClick={() => {
+      <button className="btn btn-secondary btn-lg btn-block" type="button" onClick={() => {
       enviarOrden(arrayNombre, arrayMesa, arrayProductosOrden, new Date(), 'pendiente', total())
         .then(() => {
           setArrayProductosOrden([]);
