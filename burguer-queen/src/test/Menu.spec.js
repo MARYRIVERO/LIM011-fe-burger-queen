@@ -25,8 +25,8 @@ it('Deberia contar los productos que se muestran al hacer clic', (done) => {
     wait(() => containerMenu.getAllByAltText('producto')).then(() => {
 
     const despues = containerMenu.getAllByAltText('producto').length
-    console.log(antes);
-    console.log(despues);
+   // console.log(antes);
+   // console.log(despues);
         expect(antes).not.toEqual(despues);
      done();
     })

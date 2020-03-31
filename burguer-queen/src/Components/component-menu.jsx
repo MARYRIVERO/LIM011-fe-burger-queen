@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import firebase from '../firebase/firebaseconfig';
 import Product from './component-product';
-import './component-menu.css';
+import '../css/component-menu.css';
 
 function Menu({ agregar }) {
   const [type, setType] = useState('desayuno');
@@ -36,7 +36,7 @@ function Menu({ agregar }) {
           <div className="p">
             {value.docs.filter(doc => doc.data().categoria === type)
               .map(doc =>
-                <Product document={doc} key={doc.id} agrega={agregar}  />
+                <Product document={doc.data()} key={doc.id} agrega={agregar}  />
               )}
           </div>
         </section>

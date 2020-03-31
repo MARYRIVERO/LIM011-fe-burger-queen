@@ -1,6 +1,6 @@
 import React, {useState, useEffect}  from 'react';
 import ItemProduct from './component-itemproducto';
-import './component-menu.css';
+import '../css/component-menu.css';
 
 const ListaPedidoProducto = ({ array, eliminar, cantidad, buscar}) => {
 
@@ -23,8 +23,8 @@ const ListaPedidoProducto = ({ array, eliminar, cantidad, buscar}) => {
       <div>
         <h1 className="text-center text-white">DETALLES DE PEDIDO</h1>
         <form className="text-center p m-2 p-3 mb-2 bg-success text-white rounded-pill">
-          <label className="mr-2"> Nombre <input className="form-control" type="text"  onChange={functionName }/> </label>
-          <label> N° de Mesa <input  className="form-control" type="text"  onChange={functionMesa} /> </label>
+          <label className="mr-2"> Nombre <input className="form-control" type="text"  onChange={functionName } placeholder='Ejemplo: Mary'/> </label>
+          <label> N° de Mesa <input  className="form-control" type="text"  onChange={functionMesa} placeholder='1'/> </label>
         </form>
 <table class="table table-sm ">
   <thead>
