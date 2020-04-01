@@ -1,12 +1,12 @@
 import React from 'react';
 import ComponentMesero from './component-mesero';
-import Logo from './component-header';
+import Encabezado from './component-header';
 
 
 const ComponenteVistaMesero = () => {
   return (
     <div> 
-    <Logo />
+    <Encabezado />
     <ComponentMesero />
     </div>
    )

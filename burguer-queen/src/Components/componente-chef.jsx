@@ -12,55 +12,41 @@ const ComponenteChef = () =>{
     }
   )
   return (
-    <section>
-      {error && <strong>Error: {JSON.stringify(error)}</strong>}
-      {loading && <span> Loading...</span>}
-      {value && (
-        <section >
-          <h1 >DETALLES DE PEDIDO</h1>
-          <div className="container">
-          <div className="row">
-            {value.docs.filter(doc => doc.data().estado === type)
-            .map(doc => 
+     <main>
+       {error && <strong>Error: {JSON.stringify(error)}</strong>}
+       {loading && <span> Loading...</span>}
+       {value && (
+         <section >
+           <h1 >DETALLES DE PEDIDO</h1>
+           <aside className="container">
+             <div className="row">
+              {value.docs.filter(doc => doc.data().estado === type)
+               .map(doc => 
                 <div className="col-sm-6 border border-success">
-                    <h2>{doc.data().estado}</h2>
-                    <div className="row">
-                    <p className="col-sm-2"> <span>Cliente:</span>
-                      {doc.data().nombre}
-                    </p>
-                    <p className="col-sm-2"> <span>N° de Mesa: </span>
-                      {doc.data().mesa}
-                    </p>
-                    <p className="col-sm-2"> <span>Hora de Pedido: </span>
-                      {doc.data().fecha.toDate().getHours()}  :
-                      {doc.data().fecha.toDate().getMinutes()}
-                    </p>
-                    <tbody className="col-sm-4">
+                   <h2>{doc.data().estado}</h2>
+                   <div className="row">
+                     <p className="col-sm-2"> <span>Cliente:</span> {doc.data().nombre} </p>
+                     <p className="col-sm-2"> <span>N° de Mesa: </span> {doc.data().mesa} </p>
+                     <p className="col-sm-2"> <span>Hora de Pedido: </span> {doc.data().fecha.toDate().getHours()} : {doc.data().fecha.toDate().getMinutes()} </p>
+                     <tbody className="col-sm-4">
                         {doc.data().producto.map((p) => {
-                          console.log(p);
+                        console.log(p);
                           return (
-                        <div>
+                            <div>
                               <p>Nombre {p.producto}</p>
-                              <p>{ p.cantidad}</p>
-                              </div>
-                          );
-                        })}
-                      </tbody>
-                      <p className="col-sm-2">
-                      <span>Total Pedido </span>
-                      {doc.data().totalp}
-                    </p>
-        
-                    </div>
+                              <p>{p.cantidad}</p>
+                            </div>
+                          )})};
+                     </tbody>
+                     <p className="col-sm-2"> <span>Total Pedido </span> {doc.data().totalp} </p>
+                   </div>
                 </div>
-            )
-           }
-           </div>
-          </div>
-        </section>
-
-      )}
-    </section>
+              )}
+             </div>
+           </aside>
+         </section>
+       )}
+     </main>
   )
 };
 

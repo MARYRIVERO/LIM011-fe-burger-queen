@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import firebase from '../firebase/firebaseconfig';
 import Product from './component-product';
-import '../css/component-menu.css';
+import '../RutaCss/estilo.css';
 
 function Menu({ agregar }) {
   const [type, setType] = useState('desayuno');
