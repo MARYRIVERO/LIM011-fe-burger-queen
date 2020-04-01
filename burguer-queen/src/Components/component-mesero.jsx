@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Menu from './component-menu';
 import ListaPedidoProducto from './component-listapedidoproducto';
-import firebase from 'firebase/app';
+import {enviarOrden} from './compo.js';
 import 'firebase/firestore';
 
 const ComponentMesero = () => {
@@ -68,24 +68,11 @@ const ComponentMesero = () => {
       let totalprecio = 0;
      if(arrayProductosOrden.length !== 0){
       totalprecio = arrayProductosOrden.reduce((acum, obj) => acum + obj.precio * obj.cantidad, 0)
-      console.log('precio total', totalprecio);
+      // console.log('precio total', totalprecio);
       }
       return totalprecio
     }
 
-    const enviarOrden = (nombre, mesa, producto, fecha, estado, totalp) => 
-     firebase
-    .firestore()
-    .collection('Orden')
-    .add({
-      nombre,
-      mesa,
-      producto,
-      fecha,
-      estado,
-      totalp,
-    })
-  ;
               
   return (
     <section>
@@ -103,15 +90,13 @@ const ComponentMesero = () => {
    <div className="container">
    <div className=" row justify-content-end fixed-bottom ">
      <div className="col-sm-3 verde text-center" >
-     <h3 data-testid= "montoTotal" >Total S/. {total()}</h3>
+     <h3 data-testid= "montoTotal" >Total S. {total()}</h3>
      </div>
      <div className="col-sm-2" >
       <button className="btn btn-secondary btn-lg btn-block" type="button" onClick={() => {
-      enviarOrden(arrayNombre, arrayMesa, arrayProductosOrden, new Date(), 'pendiente', total())
+      enviarOrden(arrayNombre, arrayMesa, arrayProductosOrden, 'pendiente', total(), new Date(),)
         .then(() => {
           setArrayProductosOrden([]);
-          setArrayNombre('');
-          setArrayMesa('');
         });
     }
   }

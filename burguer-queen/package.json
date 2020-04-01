@@ -7,6 +7,7 @@
     "@testing-library/user-event": "^7.2.1",
     "bootstrap": "^4.4.1",
     "firebase": "^7.10.0",
+    "mock-cloud-firestore": "^0.11.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-firebase-hooks": "^2.1.1",
@@ -17,7 +18,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage --verbose",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

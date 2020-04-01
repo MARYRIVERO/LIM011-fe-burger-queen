@@ -1,56 +1,59 @@
+
 import React from 'react';
-import TestRenderer from 'react-test-renderer'; 
+import { render, wait, fireEvent, act } from '@testing-library/react';
 import ComponentMesero from '../Components/component-mesero';
-import Menu from '../Components/component-menu';
-import ListaPedidoProducto from '../Components/component-listapedidoproducto';
-
-describe('todo junto', () => {
-
-it('Deberia pintar los productos', () => {
-const testRenderer = TestRenderer.create(<ComponentMesero />);
-const testInstance = testRenderer.root;
-
-// expect(testInstance.findByType(Menu));
-
-});
-
-it('Deberia pintar los productos', () => {
-  const testRenderer = TestRenderer.create(<ComponentMesero />);
-  const testInstance = testRenderer.root;
-  console.log(testInstance);
-
-  // expect(testInstance).toBe();
-  
-});
-})
+jest.mock('../Components/compo.js');
 
 
-// expect(testInstance.findByProps({className: "sub"}).children).toEqual(['Sub']);
-
-
-
-
-
-
-
-
-// import React from 'react';
-// import { render, wait } from '@testing-library/react';
-// import ComponentMesero from '../Components/component-mesero';
-
-  
-//   it('Deberia pintar pantalla menu y lista de pedido', (done) => {
+describe('Componente Mesero', () => {  
+  it('Deberia acceder a elementos dentro de los componetes', (done) => {
     
-//     const mesero  = render( <ComponentMesero /> );
-  
-//     wait(() => mesero.getAllByTestId('itemsproductos')).then(() => {
-//      const itemspintados = mesero.getAllByTestId('itemsproductos').length;
-//     //  console.log(totalproductospintados);
-//     expect(itemspintados).toEqual(4);
+    const mesero  = render( <ComponentMesero /> );
 
-//     const inputnombre = mesero.getByPlaceholderText('Ejemplo: Mary');
-//     expect(inputnombre.value).toBe('');
-      
-//     done();
-//   });
-// });
+    wait(() => mesero.getAllByTestId('clickProducto')).then(() => {
+
+      const btnProducto = mesero.getAllByTestId('clickProducto')[0];
+
+    act(() => {
+      fireEvent.click(btnProducto);
+      })
+
+    expect(mesero.getAllByTestId('items')).toBeTruthy();
+    expect(mesero.getAllByTestId('clickCantidad').length).toBe(1);
+
+    const btnEnviar = mesero.getByText('Enviar');
+    act(() => {
+      fireEvent.click(btnEnviar);
+      })
+
+    wait(() => mesero.getByText('Enviar')).then(() => {
+    expect(mesero.queryAllByTestId('items').length).toBe(0);
+  
+    done();
+    });
+});
+});
+
+it('Deberia aumentar la cantidad de productos', (done) => {
+    
+  const mesero  = render( <ComponentMesero /> );
+  wait(() => mesero.getAllByTestId('clickProducto')).then(() => {
+  const btnProducto = mesero.getAllByTestId('clickProducto')[0];
+
+  act(() => {
+    fireEvent.click(btnProducto);
+    })
+  wait(() =>  mesero.getAllByTestId('clickCantidad')).then(() => {
+  const btnCantidad = mesero.getAllByTestId( 'clickCantidad');
+
+
+  act(() => {
+    fireEvent.click(btnCantidad);
+    })
+
+  expect(btnCantidad.defaulValue).toBe(2);
+  done();
+});
+});
+});
+});
