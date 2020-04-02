@@ -5,11 +5,11 @@ import ListaPedidoProducto from '../Components/component-listapedidoproducto';
 
   
   it('Deberia mostrar 2 items de una orden de pedido en una lista', () => {
-    const fnBuscarMyN = jest.fn();
-    const fnCantidad = jest.fn();
-    const fnEliminar = jest.fn();
+    const fnBuscarMyN= jest.fn();
+    const fnCantidad= jest.fn();
+    const fnEliminar= jest.fn();
 
-    const obj = [{
+    const obj= [{
         Cantidad: 2,
         Descripcion: 'Cafe',
         Precio: '5',
@@ -20,9 +20,9 @@ import ListaPedidoProducto from '../Components/component-listapedidoproducto';
         Precio: '7',
       }];
        
-    const listaProductos = render(<ListaPedidoProducto array={ obj } eliminarProductos={ fnEliminar } cantidadProductos={ fnCantidad } buscarDatoCliente={ fnBuscarMyN}/>);
-    const input1 = listaProductos.getByPlaceholderText('Ejemplo: Mary');
-    const input2 = listaProductos.getByPlaceholderText('1');
+    const listaProductos= render(<ListaPedidoProducto array={ obj } eliminarProductos={ fnEliminar } cantidadProductos={ fnCantidad } buscarDatoCliente={ fnBuscarMyN}/>);
+    const input1= listaProductos.getByPlaceholderText('Ejemplo: Mary');
+    const input2= listaProductos.getByPlaceholderText('1');
 
   // cuando se pinta por primera vez
     expect(input1.value).toBe('');

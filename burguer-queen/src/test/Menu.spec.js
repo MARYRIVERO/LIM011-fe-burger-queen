@@ -6,16 +6,16 @@ import Menu from '../Components/component-menu';
 
 it('Deberia pintar los productos que se muestran al hacer clic en cada categoria', (done) => {
 
-    const fnagregar = jest.fn();
+    const fnagregar= jest.fn();
 
-    const containerMenu  = render( <Menu agregar={ fnagregar }/> );
+    const containerMenu= render( <Menu agregar={ fnagregar }/> );
 
     
     wait(() => containerMenu.getByText('Hamburguesas') ).then(() => {
     
-    const antes = containerMenu.getAllByAltText('producto').length;
+    const antes= containerMenu.getAllByAltText('producto').length;
     
-    const buttonA = containerMenu.getByText('Acompañamientos');
+    const buttonA= containerMenu.getByText('Acompañamientos');
 
     // disparando el evento de click del button Acompañamientos
    
@@ -23,30 +23,30 @@ it('Deberia pintar los productos que se muestran al hacer clic en cada categoria
 
     wait(() => containerMenu.getAllByAltText('producto')).then(() => {
 
-    const despuesA = containerMenu.getAllByAltText('producto').length
+    const despuesA= containerMenu.getAllByAltText('producto').length
    // console.log(antes);
    // console.log(despues);
     expect(antes).not.toEqual(despuesA);
 
-    const buttonB = containerMenu.getByText('Bebidas');
+    const buttonB= containerMenu.getByText('Bebidas');
     // disparando el evento de click del button Bebidas
     fireEvent.click(buttonB);
     const despuesB = containerMenu.getAllByAltText('producto').length
     
     expect(despuesA).not.toEqual(despuesB);
 
-    const buttonC = containerMenu.getByText('Hamburguesas');
+    const buttonC= containerMenu.getByText('Hamburguesas');
     // disparando el evento de click del button Hamburguesas
     fireEvent.click(buttonC);
-    const despuesC = containerMenu.getAllByAltText('producto').length
+    const despuesC= containerMenu.getAllByAltText('producto').length
     // console.log(despuesB);
     // console.log(despuesC);
     expect(despuesB).not.toEqual(despuesC);
 
-    const buttonD = containerMenu.getByText('Desayuno');
+    const buttonD= containerMenu.getByText('Desayuno');
     // disparando el evento de click del button Desayuno
     fireEvent.click(buttonD);
-    const despuesD = containerMenu.getAllByAltText('producto').length
+    const despuesD= containerMenu.getAllByAltText('producto').length
     // console.log(despuesD);
     // console.log(despuesC);
     expect(despuesC).not.toEqual(despuesD);

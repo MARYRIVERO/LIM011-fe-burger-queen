@@ -36,7 +36,7 @@ function Menu({ buscarProductos }) {
           <section className="p">
             {value.docs.filter(doc => doc.data().categoria === type)
               .map(doc =>
-                <Product documento={doc} key={doc.id} buscarProducto={buscarProductos}  />
+                <Product documento={doc} key={doc.id} buscarProducto={buscarProductos} />
               )}
           </section>
         </section>

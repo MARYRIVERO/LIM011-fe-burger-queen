@@ -5,18 +5,18 @@ import ItemProducto from '../Components/component-itemproducto';
 
 
 it('Deberia pintar los productos seleccionados', () => {
-    const fnEliminar = jest.fn();
-    const fnCantidad = jest.fn();
+    const fnEliminar= jest.fn();
+    const fnCantidad= jest.fn();
     const objProducto = {
         producto: 'Cafe',
         precio: '5',
         cantidad: '2',
     }
 
-    const itemProductos  = render( <ItemProducto dataProducto={objProducto} eliminarProducto={ fnEliminar } cantidadproducto={fnCantidad}/> );
-    const btnCantidad = itemProductos.getByTestId('clickCantidad');
-    const listaDeNodos = itemProductos.getAllByTestId('items');
-    const btnElimimar = itemProductos.getByTestId('clickEliminar');
+    const itemProductos= render( <ItemProducto dataProducto={objProducto} eliminarProducto={ fnEliminar } cantidadproducto={fnCantidad}/> );
+    const btnCantidad= itemProductos.getByTestId('clickCantidad');
+    const listaDeNodos= itemProductos.getAllByTestId('items');
+    const btnElimimar= itemProductos.getByTestId('clickEliminar');
 
     act(() => {
         fireEvent.click(btnCantidad);

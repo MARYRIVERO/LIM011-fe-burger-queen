@@ -1,42 +1,44 @@
 import MockFirebase from 'mock-cloud-firestore';
 import {enviarOrden} from '../Components/compo.js';
 
-const fixtureData = {
+const fixtureData= {
   __collection__: {
     orden: {
-        post001: {
-          contenido: 'probando mocks',
-          tipo: 'publico',
-          name: 'mariangel mora',
-        },
+      post001: {
+        contenido: 'probando mocks',
+        tipo: 'publico',
+        name: 'mariangel mora',
       },
     },
-  }
+  },
+}
 
-global.firebase = new MockFirebase(fixtureData, { isNaiveSnapshotListenerEnabled: true });
+global.firebase= new MockFirebase(fixtureData, {
+  isNaiveSnapshotListenerEnabled: true
+});
 
 
-const nombre = {
+const nombre= {
   name: 'Mary',
 };
 
-const mesa = {
-    mesas: '1',
-  };
+const mesa= {
+  mesas: '1',
+};
 
-const producto = {
+const producto= {
   producto: 'Cafe',
   precio: '5',
   url: 'mi imagen de prueba',
 }
 
-  
-const estado = {
-    status: 'pendiente'
+
+const estado= {
+  status: 'pendiente'
 }
 
-const totalp = {
- total: 5
+const totalp= {
+  total: 5
 }
 
 describe('enviarOrden', () => {

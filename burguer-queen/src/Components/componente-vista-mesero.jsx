@@ -5,11 +5,11 @@ import Encabezado from './component-header';
 
 const ComponenteVistaMesero = () => {
   return (
-    <div> 
-    <Encabezado />
-    <ComponentMesero />
+    <div>
+      <Encabezado />
+      <ComponentMesero />
     </div>
-   )
-   };
+  )
+};
 
- export default ComponenteVistaMesero;
+export default ComponenteVistaMesero;

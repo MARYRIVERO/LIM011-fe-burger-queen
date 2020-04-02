@@ -1,58 +1,59 @@
 $btnColor-verde: #00ff7f;
-$polmo: #6e6a6a ;
+$polmo: #6e6a6a;
 
 
 // Header
 .App-header {
-    height:150px;
-    background: $polmo;
-    background-image: url(./fondoHeader.svg);
-    background-size: contain;
-  }
-  
+  height: 150px;
+  background: $polmo;
+  background-image: url(./fondoHeader.svg);
+  background-size: contain;
+}
+
 .App-logo {
-    height: 100%;
-    margin-left: 5%;
-  }
+  height: 100%;
+  margin-left: 5%;
+}
 
 
 // Vista Menu
-.style{
-    width: 10rem;
-    height: 17rem;
-  }
-  
+.style {
+  width: 10rem;
+  height: 17rem;
+}
+
 .prod {
-    margin: 1em;
-    background: $btnColor-verde;
-    flex-direction: column;
-  }
-  
+  margin: 1em;
+  background: $btnColor-verde;
+  flex-direction: column;
+}
+
 .p {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    flex-direction: row;
-  }
-.plomo{
-    background: $polmo;
-  }
-  
-.verde{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.plomo {
+  background: $polmo;
+}
+
+.verde {
   background: $btnColor-verde;
   border-radius: 1em;
   width: auto;
-  }
-  
-.right{
-    text-align: right;
-  }
-  
-.tamaño{
-    min-width: 50px;
-  }
-  
-.img{
-    width: 158px;
-    height: 130px;
-  }
+}
+
+.right {
+  text-align: right;
+}
+
+.tamaño {
+  min-width: 50px;
+}
+
+.img {
+  width: 158px;
+  height: 130px;
+}
