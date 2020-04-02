@@ -6,7 +6,7 @@ import Encabezado from './component-header';
 const ComponenteVistaChef = () => {
   return (
     <div>
-      <Encabezado />
+      <Encabezado ocultar={false} />
       <ComponenteChef />
     </div>
   )

@@ -6,7 +6,7 @@ import Encabezado from './component-header';
 const ComponenteVistaMesero = () => {
   return (
     <div>
-      <Encabezado />
+      <Encabezado ocultar={true} />
       <ComponentMesero />
     </div>
   )
