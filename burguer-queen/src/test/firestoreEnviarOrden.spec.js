@@ -5,9 +5,17 @@ const fixtureData= {
   __collection__: {
     orden: {
       post001: {
-        contenido: 'probando mocks',
-        tipo: 'publico',
-        name: 'mariangel mora',
+        estado: 'pendiente',
+        fecha: 'hoy',
+        mesa: '1',
+        nombre: 'Mary',
+        producto: {
+          cantidad: '1',
+          id: '02',
+          precio: '5',
+          producto: 'cafe',
+          url: 'imagen',
+          }
       },
     },
   },
@@ -41,12 +49,12 @@ const totalp= {
   total: 5
 }
 
-describe('enviarOrden', () => {
+describe('Componente Mesero', () => {  
   it('debería ser una función', () => {
     expect(typeof enviarOrden).toBe('function');
   });
-  // it('Debería poder enviar data a firestore', done => enviarOrden(nombre, mesa, producto, estado, totalp).then((data) => {
-  //   expect(data.contenido.contenido).toBe('jn');
-  //   done();
-  // }));
+  it('Deberia poder crear un nuevo usuario', (done) => enviarOrden(nombre, mesa, producto, estado, totalp).then((data) => {
+    expect(data.nombre).toBe('Mary');
+    done();
+  }));
 });
