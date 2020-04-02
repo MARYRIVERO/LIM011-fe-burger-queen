@@ -1,33 +1,31 @@
 @charset "UTF-8";
-
 .App-header {
   height: 150px;
   background: #6e6a6a;
   background-image: url(./fondoHeader.svg);
   background-size: contain;
 }
-
-.App-logo {
+.App-header .App-logo {
   height: 100%;
   margin-left: 5%;
-}
-
-.style {
-  width: 10rem;
-  height: 17rem;
-}
-
-.prod {
-  margin: 1em;
-  background: #00ff7f;
-  flex-direction: column;
 }
 
 .p {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  flex-direction: row;
+}
+.p .style {
+  width: 10rem;
+  height: 17rem;
+}
+.p .prod {
+  margin: 1em;
+  background: #00ff7f;
+}
+.p .img {
+  width: 158px;
+  height: 130px;
 }
 
 .plomo {
@@ -46,11 +44,6 @@
 
 .tamaño {
   min-width: 50px;
-}
-
-.img {
-  width: 158px;
-  height: 130px;
 }
 
 /*# sourceMappingURL=estilo.css.map */
