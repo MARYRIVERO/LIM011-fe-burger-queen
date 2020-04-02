@@ -17,7 +17,7 @@ function Menu({ buscarProductos }) {
       {error && <strong>Error: {JSON.stringify(error)}</strong>}
       {loading && <span> Loading...</span>}
       {value && (
-        <section >
+        <section>
           <h1 className="text-center text-black">LISTA DE PRODUCTOS</h1>
           <aside className="p">
             <button type="button" className="btn btn-success m-3" onClick={() => setType('desayuno')}>
