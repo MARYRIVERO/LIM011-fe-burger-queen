@@ -20,7 +20,7 @@ import ListaPedidoProducto from '../Components/component-listapedidoproducto';
         Precio: '7',
       }];
        
-    const listaProductos = render(<ListaPedidoProducto array={ obj } eliminar={ fnEliminar } cantidad={ fnCantidad } buscar={ fnBuscarMyN}/>);
+    const listaProductos = render(<ListaPedidoProducto array={ obj } eliminarProductos={ fnEliminar } cantidadProductos={ fnCantidad } buscarDatoCliente={ fnBuscarMyN}/>);
     const input1 = listaProductos.getByPlaceholderText('Ejemplo: Mary');
     const input2 = listaProductos.getByPlaceholderText('1');
 

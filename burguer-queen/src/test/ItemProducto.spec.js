@@ -22,8 +22,6 @@ it('Deberia pintar los productos seleccionados', () => {
         fireEvent.click(btnCantidad);
       })
     
-    expect(fnCantidad).toHaveBeenCalled();
-
     expect(getNodeText(listaDeNodos[0])).toBe('Cafe');
     expect(getNodeText(listaDeNodos[1])).toBe('5');
     expect(getNodeText(listaDeNodos[2])).toBe('S/.10');

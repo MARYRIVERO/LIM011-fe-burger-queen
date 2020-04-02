@@ -7,4 +7,3 @@ import Logo from '../Components/component-header';
     const element = getByTestId('imagen');
     expect(element).toBeTruthy()
   })
-

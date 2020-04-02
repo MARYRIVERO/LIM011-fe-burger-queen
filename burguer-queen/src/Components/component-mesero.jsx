@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Menu from './component-menu';
 import ListaPedidoProducto from './component-listapedidoproducto';
-import firebase from 'firebase/app';
+import {enviarOrden} from './compo.js';
 import 'firebase/firestore';
 
 const ComponentMesero = () => {
@@ -11,20 +11,20 @@ const ComponentMesero = () => {
   const [arrayMesa, setArrayMesa] = useState([]);
 
   const [arrayProductosOrden, setArrayProductosOrden] = useState([]);
-    const agregarTarea = (objTarea, Id) => {
+    const buscarProducto = (obj, Id) => {
       // console.log('vista padre',objTarea); 
 
       let arrayId = arrayProductosOrden.filter(el => el.id === Id)
-      console.log(arrayId);
+      // console.log(arrayId);
       if(arrayId.length === 0){ 
-         const obj = {
+         const producto = {
               cantidad: 1,
-              producto: objTarea.producto,
-              precio: objTarea.precio,
+              producto: obj.producto,
+              precio: obj.precio,
               id: Id,
-              url: objTarea.url,
+              url: obj.url,
            }
-      const newArr =  arrayProductosOrden.concat([ obj ]);
+      const newArr =  arrayProductosOrden.concat([ producto ]);
       setArrayProductosOrden(newArr);
   }
 }
@@ -36,82 +36,63 @@ const ComponentMesero = () => {
 
   function eliminarProducto(obj) {
     const temp = arrayProductosOrden;
-    console.log('Producto que queremos borrar', obj);
+    // console.log('Producto que queremos borrar', obj);
     const indice = temp.indexOf(obj);
-    console.log('indice del producto', obj);
-    
+    // console.log('indice del producto', obj);
      if ( indice >= 0) {
        temp.splice(indice ,1) 
-
       }
       setArrayProductosOrden(temp)
-     console.log(arrayProductosOrden);
+    //  console.log(arrayProductosOrden);
      setState({}); 
 };
 
-  const incrementar = (productoId, cant) => {
+  const incrementarCantidad = (productoId, cant) => {
    const arrNew = arrayProductosOrden.map((element) => {
-    console.log('antes', element);
+    // console.log('antes', element);
      if (productoId === element.id) {
       return {
           ...element,
           cantidad: cant,
         };
       }
-      console.log('despues', element);
+      // console.log('despues', element);
        return element;
      });
      setArrayProductosOrden(arrNew);
     };
 
-    const total = () =>{
+    const totalOrden = () =>{
       let totalprecio = 0;
      if(arrayProductosOrden.length !== 0){
       totalprecio = arrayProductosOrden.reduce((acum, obj) => acum + obj.precio * obj.cantidad, 0)
-      console.log('precio total', totalprecio);
+      // console.log('precio total', totalprecio);
       }
       return totalprecio
     }
-
-    const enviarOrden = (nombre, mesa, producto, fecha, estado, totalp) => 
-     firebase
-    .firestore()
-    .collection('Orden')
-    .add({
-      nombre,
-      mesa,
-      producto,
-      fecha,
-      estado,
-      totalp,
-    })
-  ;
-              
   return (
-    <section>
+    <main>
     <div className="container-fluid ">
       <div className="row">
-      <div className="col-sm-12 col-md-6 fondo">
-      <Menu agregar={agregarTarea}/>
-      </div>
-      <div className="col-sm-12 col-md-6 plomo ">
-      <ListaPedidoProducto array={arrayProductosOrden} eliminar={eliminarProducto}  cantidad= {incrementar} buscar={buscaNombreyMesa}/>
-      </div>
+      <section className="col-sm-12 col-md-6 fondo">
+      <Menu buscarProductos={buscarProducto}/>
+      </section>
+      <section className="col-sm-12 col-md-6 plomo ">
+      <ListaPedidoProducto array={arrayProductosOrden} eliminarProductos={eliminarProducto}  cantidadProductos= {incrementarCantidad} buscarDatoCliente={buscaNombreyMesa}/>
+      </section>
       </div>
      </div>
 
-   <div className="container">
+   <section className="container">
    <div className=" row justify-content-end fixed-bottom ">
      <div className="col-sm-3 verde text-center" >
-     <h3 data-testid= "montoTotal" >Total S/. {total()}</h3>
+     <h3 data-testid= "montoTotal" >Total S. {totalOrden()}</h3>
      </div>
      <div className="col-sm-2" >
       <button className="btn btn-secondary btn-lg btn-block" type="button" onClick={() => {
-      enviarOrden(arrayNombre, arrayMesa, arrayProductosOrden, new Date(), 'pendiente', total())
+      enviarOrden(arrayNombre, arrayMesa, arrayProductosOrden, 'pendiente', totalOrden(), new Date(),)
         .then(() => {
           setArrayProductosOrden([]);
-          setArrayNombre('');
-          setArrayMesa('');
         });
     }
   }
@@ -120,8 +101,8 @@ const ComponentMesero = () => {
 </button>
 </div>
 </div>
-</div>
 </section>
+</main>
   )
 };
 

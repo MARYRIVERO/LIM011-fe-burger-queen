@@ -16,7 +16,7 @@ it('Deberia pintar los productos', () => {
         },
     }
 
-    const productos  = render( <Product document={objProducto} agrega={ fnagregar }/> );
+    const productos  = render( <Product documento={objProducto} buscarProducto={ fnagregar }/> );
     const btnProducto = productos.getByTestId('clickProducto');
     const listaDeNodos = productos.getAllByTestId('item');
 
