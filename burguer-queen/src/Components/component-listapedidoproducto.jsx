@@ -2,29 +2,29 @@ import React, {useState, useEffect}  from 'react';
 import ItemProduct from './component-itemproducto';
 import '../RutaCss/estilo.css';
 
-const ListaPedidoProducto = ({ array, eliminar, cantidad, buscar}) => {
+const ListaPedidoProducto = ({ array, eliminarProductos, cantidadProductos, buscarDatoCliente}) => {
 
-  const [name, setName] = useState('');
+  const [nombre, setNombre] = useState('');
   const [mesa, setMesa] = useState('');
 
-  const functionName = (e) => {
-    setName(e.target.value);
+  const nombreCliente = (e) => {
+    setNombre(e.target.value);
   };
-  const functionMesa = (e) => {
+  const numeroMesa = (e) => {
     setMesa(e.target.value);
   };
 
   useEffect(() => {
-    buscar(name, mesa)
+    buscarDatoCliente(nombre, mesa)
   });
   
   return (
     <section>
-      <div data-testid= "listapedido">
+      <aside data-testid= "listapedido">
         <h1 className="text-center text-white">DETALLES DE PEDIDO</h1>
         <form className="text-center p m-2 p-3 mb-2 bg-success text-white rounded-pill">
-          <label className="mr-2"> Nombre <input className="form-control" type="text"  onChange={functionName } placeholder='Ejemplo: Mary' value={name}/> </label>
-          <label> N° de Mesa <input  className="form-control" type="text"  onChange={functionMesa} placeholder='1'value={mesa}/> </label>
+          <label className="mr-2"> Nombre <input className="form-control" type="text"  onChange={nombreCliente } placeholder='Ejemplo: Mary' value={nombre}/> </label>
+          <label> N° de Mesa <input  className="form-control" type="text"  onChange={numeroMesa} placeholder='1' value={mesa}/> </label>
         </form>
 <table className="table table-sm ">
   <thead>
@@ -37,13 +37,12 @@ const ListaPedidoProducto = ({ array, eliminar, cantidad, buscar}) => {
     </tr>
   </thead>
  </table>
-        
-      </div>
+      </aside>
       {
         array.length === 0 ?
           'Iniciar Pedido' :
           array.map((el, index) => 
-          <ItemProduct dataProducto={el} key={index} eliminarProducto={eliminar} cantidadproducto={cantidad} />)
+          <ItemProduct dataProducto={el} key={index} eliminarProducto={eliminarProductos} cantidadproducto={cantidadProductos} />)
       }
       
     </section>

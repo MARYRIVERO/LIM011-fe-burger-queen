@@ -4,16 +4,17 @@ const ItemProducto = ({ dataProducto, eliminarProducto, cantidadproducto }) => {
 
   const { cantidad, producto, precio } = dataProducto;
   const [Cantidad, setCantidad] = useState(cantidad);
+
+  const incrementar = (e) => {
+    const p = e.target.value;
+    cantidadproducto(dataProducto.id, p);
+    setCantidad(p);
+  };
+
   //  console.log('vista primo', dataProducto)
   return (
     <section className="row justify-content-between">
-       <input data-testid= "clickCantidad" className="col-sm-1 ml-3 form-control tamaño" type="number" min="1" max="100"
-         defaultValue={cantidad}
-         onClick={(e) => {
-           const p = e.target.value;
-           cantidadproducto(dataProducto.id, p);
-           setCantidad(p);
-          }}  />
+      <input data-testid="clickCantidad" className="col-sm-1 ml-3 form-control tamaño" type="text" onChange={incrementar}  placeholder="N°"/> 
        <h6 data-testid="items" className="col-sm-5 text-white">{producto}</h6>
        <h6 data-testid="items" className="col-sm-2 text-white">{precio}</h6>
        <h6 data-testid="items" className="col-sm-2 text-white">S/.{precio * Cantidad}</h6>
@@ -32,4 +33,3 @@ const ItemProducto = ({ dataProducto, eliminarProducto, cantidadproducto }) => {
 }
 
 export default ItemProducto; 
-

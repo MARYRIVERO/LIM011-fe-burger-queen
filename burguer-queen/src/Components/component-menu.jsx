@@ -4,7 +4,7 @@ import firebase from '../firebase/firebaseconfig';
 import Product from './component-product';
 import '../RutaCss/estilo.css';
 
-function Menu({ agregar }) {
+function Menu({ buscarProductos }) {
   const [type, setType] = useState('desayuno');
   const [value, loading, error] = useCollection(
     firebase.firestore().collection('Menu'),
@@ -19,7 +19,7 @@ function Menu({ agregar }) {
       {value && (
         <section >
           <h1 className="text-center text-black">LISTA DE PRODUCTOS</h1>
-          <div className="p">
+          <aside className="p">
             <button type="button" className="btn btn-success m-3" onClick={() => setType('desayuno')}>
               Desayuno
           </button>
@@ -32,13 +32,13 @@ function Menu({ agregar }) {
             <button type="button" className="btn btn-success m-3" onClick={() => setType('bebida')}>
               Bebidas
           </button>
-          </div>
-          <div className="p">
+          </aside>
+          <section className="p">
             {value.docs.filter(doc => doc.data().categoria === type)
               .map(doc =>
-                <Product document={doc} key={doc.id} agrega={agregar}  />
+                <Product documento={doc} key={doc.id} buscarProducto={buscarProductos}  />
               )}
-          </div>
+          </section>
         </section>
 
       )}

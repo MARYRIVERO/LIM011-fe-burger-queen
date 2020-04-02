@@ -34,7 +34,7 @@ describe('Componente Mesero', () => {
 });
 });
 
-it('Deberia aumentar la cantidad de productos', (done) => {
+it('Deberia cambiar la cantidad de productos', (done) => {
     
   const mesero  = render( <ComponentMesero /> );
   wait(() => mesero.getAllByTestId('clickProducto')).then(() => {
@@ -43,15 +43,18 @@ it('Deberia aumentar la cantidad de productos', (done) => {
   act(() => {
     fireEvent.click(btnProducto);
     })
-  wait(() =>  mesero.getAllByTestId('clickCantidad')).then(() => {
-  const btnCantidad = mesero.getAllByTestId( 'clickCantidad');
+  wait(() =>  mesero.getByPlaceholderText('N°')).then(() => {
+    const input1 = mesero.getByPlaceholderText('N°');
 
+  // cuando se pinta por primera vez
+    expect(input1.value).toBe('');
 
   act(() => {
-    fireEvent.click(btnCantidad);
-    })
-
-  expect(btnCantidad.defaulValue).toBe(2);
+      fireEvent.change(input1, { target: { value: '2' } });
+      })
+  
+    // verifica cambio del input
+    expect(input1.value).toBe('2');
   done();
 });
 });
