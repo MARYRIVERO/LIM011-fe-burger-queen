@@ -14,7 +14,7 @@ return(
   </div>
 )} 
 return(
-     <div>
+     <div data-testid="imagen">
       <header className="App-header">
       <img src={logo} className="App-logo img-fluid" alt="logo" />
       </header>
