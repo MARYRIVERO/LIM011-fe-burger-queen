@@ -2,8 +2,6 @@ import React from 'react';
 import { render, wait } from '@testing-library/react';
 import ComponenteChef from '../Components/componente-chef';
 
-
-
 it('Deberia pintar los productos que se muestran al hacer clic en cada categoria', (done) => {
 
     const containerChef= render( <ComponenteChef /> );

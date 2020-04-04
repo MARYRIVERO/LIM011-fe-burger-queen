@@ -8,9 +8,11 @@ const ComponentMesero = () => {
   let [, setState] = useState();
 
   const [arrayNombre, setArrayNombre] = useState([]);
+
   const [arrayMesa, setArrayMesa] = useState([]);
 
   const [arrayProductosOrden, setArrayProductosOrden] = useState([]);
+
   const buscarProducto = (obj, Id) => {
     // console.log('vista padre',objTarea); 
 

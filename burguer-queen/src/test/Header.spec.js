@@ -3,10 +3,8 @@ import { render } from '@testing-library/react';
 import Logo from '../Components/component-header';
 
   it('Deberia mostrar el logo de la Aplicacion', () => {
-    const encabezado = render(<Logo/>)
-    
+    const { getByTestId } = render(<Logo/>)
+    const element= getByTestId('imagen');
+      expect(element).toBeTruthy()
   })
 
-
-  // const element= getByTestId('imagen');
-  //   expect(element).toBeTruthy()
