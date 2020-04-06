@@ -1,0 +1,68 @@
+@charset "UTF-8";
+.App-header {
+  height: 150px;
+  background: #6e6a6a;
+  background-image: url(./fondoHeader.svg);
+  background-size: contain; }
+  .App-header .App-logo {
+    height: 100%;
+    margin-left: 5%; }
+
+.p {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center; }
+  .p .style {
+    width: 10rem;
+    height: 17rem; }
+  .p .prod {
+    margin: 1em;
+    background: #00ff7f; }
+  .p .img {
+    width: 158px;
+    height: 130px; }
+
+.plomo {
+  background: #6e6a6a; }
+
+.verde {
+  background: #00ff7f;
+  border-radius: 1em;
+  width: auto; }
+
+.right {
+  text-align: right; }
+
+.tamaño {
+  min-width: 50px; }
+
+.p {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center; }
+  .p .style {
+    width: 10rem;
+    height: 17rem; }
+  .p .prod {
+    margin: 1em;
+    background: #00ff7f; }
+  .p .img {
+    width: 158px;
+    height: 130px; }
+
+.plomo {
+  background: #6e6a6a; }
+
+.verde {
+  background: #00ff7f;
+  border-radius: 1em;
+  width: auto; }
+
+.right {
+  text-align: right; }
+
+.tamaño {
+  min-width: 50px; }
+
+.textos {
+  color: #001affe0; }
