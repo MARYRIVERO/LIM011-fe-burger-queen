@@ -22,3 +22,7 @@ return(
 )}
 
 export default Encabezado;
+
+  // "homepage": "https://MARYRIVERO.github.io/LIM011-fe-burger-queen",
+      // "predeploy": "npm run build",
+    // "deploy": "gh-pages -d build",
