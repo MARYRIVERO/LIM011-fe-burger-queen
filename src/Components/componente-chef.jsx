@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import firebase from '../firebase/firebaseconfig';
 import Pedido from './componente-pedido';
+import '../RutaCss/estilo.css';
 
 const ComponenteChef = () => {
   const [value, loading, error] = useCollection(
@@ -15,10 +16,10 @@ const ComponenteChef = () => {
       {error && <strong>Error: {JSON.stringify(error)}</strong>}
       {loading && <span> Loading...</span>}
       {value && (
-        <section >
-          <h1 >DETALLES DE PEDIDO</h1>
+        <section className="fondito" >
+          <h1 className="text-center franja">LISTA DE PEDIDOS</h1>
           <aside className="container">
-            <div className="row">
+            <div className="row tabla">
               {value.docs
                 .map(doc =>
                   <Pedido documento={doc} key={doc.id} />

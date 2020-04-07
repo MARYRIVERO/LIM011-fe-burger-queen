@@ -90,7 +90,7 @@ const ComponentMesero = () => {
           </div>
           <div className="col-sm-2" >
             <button className="btn btn-secondary btn-lg btn-block" type="button" onClick={() => {
-              enviarOrden(arrayNombre, arrayMesa, arrayProductosOrden, 'pendiente', totalOrden(), new Date())
+              enviarOrden(arrayNombre, arrayMesa, arrayProductosOrden, 'Pendiente', totalOrden(), new Date())
                 .then(() => {
                   setArrayProductosOrden([]);
                 });

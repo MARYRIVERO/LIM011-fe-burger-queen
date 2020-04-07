@@ -1,6 +1,6 @@
 import firebase from '../firebase/firebaseconfig';
 
-const enviarOrden = (nombre, mesa, producto, estado, totalp, fecha, ) =>
+export const enviarOrden = (nombre, mesa, producto, estado, totalp, fecha, ) =>
     firebase
     .firestore()
     .collection('Orden')
@@ -12,4 +12,3 @@ const enviarOrden = (nombre, mesa, producto, estado, totalp, fecha, ) =>
         estado,
         totalp,
     });
-export default enviarOrden;

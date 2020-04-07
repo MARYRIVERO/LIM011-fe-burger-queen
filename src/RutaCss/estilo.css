@@ -46,4 +46,38 @@
   min-width: 50px;
 }
 
+.oscuro {
+  color: #222222;
+}
+
+.textos {
+  font-family: fantasy;
+  font-size: 20px;
+  border-color: #6f6e70;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.datos {
+  font-family: fantasy;
+  font-size: 20px;
+  border-color: #6f6e70;
+  font-weight: normal;
+  color: #ccc2c2;
+}
+
+.fondito {
+  background-image: url(./fondoBurger.svg);
+  background-size: contain;
+}
+
+.tabla {
+  background: #222222;
+}
+
+.franja {
+  background: #00ff7f;
+  width: auto;
+}
+
 /*# sourceMappingURL=estilo.css.map */
