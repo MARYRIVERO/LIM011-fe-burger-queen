@@ -17,12 +17,9 @@ return(
      <div data-testid="imagen">
       <header className="App-header">
       <img src={logo} className="App-logo img-fluid" alt="logo" />
+      <Link className="btn btn-success float-right m-5 btn-lg border border-light" to="/">Menu</Link>
       </header>
-    </div>
+  </div>
 )}
 
 export default Encabezado;
-
-  // "homepage": "https://MARYRIVERO.github.io/LIM011-fe-burger-queen",
-      // "predeploy": "npm run build",
-    // "deploy": "gh-pages -d build",

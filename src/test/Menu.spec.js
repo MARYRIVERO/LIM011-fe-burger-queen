@@ -9,7 +9,6 @@ it('Deberia pintar los productos que se muestran al hacer clic en cada categoria
     const fnagregar= jest.fn();
 
     const containerMenu= render( <Menu agregar={ fnagregar }/> );
-
     
     wait(() => containerMenu.getByText('Hamburguesas') ).then(() => {
     

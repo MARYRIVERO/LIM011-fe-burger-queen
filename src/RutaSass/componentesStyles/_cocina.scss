@@ -1,10 +1,9 @@
-$btnColor-verde: #00ff7f;
 $plomo: #6e6a6a;
 
 .textos{
 font-family: fantasy;
 font-size: 20px;
-border-color: rgb(111, 110, 112);
+border-color: $plomo;
 font-weight: bold;
 color: #ffffff;
 }
@@ -12,7 +11,7 @@ color: #ffffff;
 .datos{
   font-family: fantasy;
   font-size: 20px;
-  border-color: rgb(111, 110, 112);
+  border-color: $plomo;
   font-weight: normal;
   color: #ccc2c2;
 
